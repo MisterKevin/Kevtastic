@@ -1,0 +1,125 @@
+@keyframes fade {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(images/im_grey.png);
+
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.front_door_image {
+	background: url(images/im_kevin.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	position: absolute;
+	width:100%;
+	height:100%;
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,1);
+	box-shadow: inset 0 0 100px rgba(0,0,0,1);
+}
+
+.container-fluid {
+	height: 100%;
+}
+
+#container-override {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row-fluid {
+	height: 100%;
+}
+
+.col-md-3 {
+	text-align: center;
+	z-index: -1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+
+	border-right: 2px solid #75715E;
+
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	/*background-color: orange;*/
+}
+
+.col-md-9 {
+	z-index: -1;
+	height: 100%;
+
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	/*background-color: grey;*/
+}
+
+.portrait {
+	border-radius: 50%;
+	max-width: 99%;
+	height: auto;
+	width: auto;
+}
+
+.portrait-caption {
+	color: white;
+	font-size: 5vw;
+	font-family: 'VT323', monospace;
+}
+
+.portrait-caption-info {
+	color: white;
+	font-size: 1.5vw;
+	font-family: 'VT323', monospace;
+}
+
+.the-code-header {
+	font-size: 5vw;
+	font-family: 'Anonymous Pro', monospace;
+}
+
+
+.white {
+	color: white;
+}
+
+.the-code-body {
+	font-size: 2vw;
+	font-family: 'Anonymous Pro', monospace;	
+}
+
+.green {
+	color: #A6E22E;
+}
+
+.cyan {
+	color: #66D9EF;
+}
+
+.pink {
+	color: #F92672;
+}
+
+.grey {
+	color: #75715E;
+}
+
+.italic {
+	font-style: italic;
+}
