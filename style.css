@@ -1,3 +1,6 @@
+/*///////////////////////*/
+/*GLOBALS GLOBALS GLOBALS*/
+/*///////////////////////*/
 @keyframes fade {
 	from {opacity: 1;}
 	to {opacity: 0;}
@@ -20,20 +23,28 @@ body {
 	padding: 0;
 }
 
-.front_door_image {
-	background: url(images/im_kevin.png) no-repeat center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-	position: absolute;
-	width:100%;
-	height:100%;
-	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,1);
-	box-shadow: inset 0 0 100px rgba(0,0,0,1);
+::selection {
+  background: #E19614; /* WebKit/Blink Browsers */
+  /*color: white*/;
 }
 
+::-moz-selection {
+  background: #E19614; /* Gecko Browsers */
+  /*color: white;*/
+}
+
+a {
+	color:inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #696969;
+}
+
+/*/////////////////////////////*/
+/*BOOTSTRAP BOOTSTRAP BOOTSTRAP*/
+/*/////////////////////////////*/
 .container-fluid {
 	height: 100%;
 }
@@ -45,11 +56,12 @@ body {
 
 .row-fluid {
 	height: 100%;
+	z-index: -1;
 }
 
 .col-md-3 {
 	text-align: center;
-	z-index: -1;
+	z-index: 1;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -62,12 +74,30 @@ body {
 }
 
 .col-md-9 {
-	z-index: -1;
+	z-index: 1;
 	height: 100%;
 
 	/*FOR SHADING:
 	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
 	box-shadow: inset 0 0 100px rgba(0,0,0,.3);*/
+}
+
+/*//////////////////////////*/
+/*PICTURES PICTURES PICTURES*/
+/*//////////////////////////*/
+.front_door_image {
+	background: url(images/im_kevin.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	z-index: 99;
+
+	position: absolute;
+	width:100%;
+	height:100%;
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,1);
+	box-shadow: inset 0 0 100px rgba(0,0,0,1);
 }
 
 .portrait {
@@ -89,47 +119,76 @@ body {
 	font-family: 'VT323', monospace;
 }
 
+/*//////////////*/
+/*BODY BODY BODY*/
+/*//////////////*/
 .the-code-header {
 	font-size: 4vw;
 	font-family: 'Ubuntu', sans-serif;
 }
 
+.the-code-comment {
+	font-size: 1.75vw;
+	font-family: 'Ubuntu', sans-serif;
+}
 
+.the-code-body {
+	margin-top: -13px;
+	font-size: 1.75vw;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/*////////////////////*/
+/*COLORS COLORS COLORS*/
+/*////////////////////*/
 .white {
 	color: white;
 }
 
-.the-code-body {
-	font-size: 1.75vw;
-	font-family: 'Ubuntu', sans-serif;
-}
-
-.the-code-comment {
-	margin-top: -13px;
-	font-size: 1.75vw;
-	font-family: 'Ubuntu', sans-serif;
+.white::selection {
+	color: #191919;
 }
 
 .green {
 	color: #A6E22E;
 }
 
+.green::selection {
+	color: #ADFF2F;
+}
+
 .cyan {
 	color: #66D9EF;
+}
+
+.cyan::selection {
+	color: #00FFFF;
 }
 
 .pink {
 	color: #F92672;
 }
 
+.pink::selection {
+	color: #FF28B4;
+}
+
 .grey {
 	color: #75715E;
 }
 
-.italic {
-	font-style: italic;
+.grey::selection {
+	color: white;
 }
 
 .orange {
 	color: #FD971F;
+}
+
+.orange::selection {
+	color: #FF6401;
+}
+
+.italic {
+	font-style: italic;
 }
