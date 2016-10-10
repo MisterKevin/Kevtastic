@@ -11,8 +11,8 @@ html {
 }
 
 body {
-	background-image: url(images/im_grey.png);
-
+	background-image: url(images/im_greyer.png);
+	
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -56,18 +56,18 @@ body {
 
 	border-right: 2px solid #75715E;
 
+	/*FOR SHADING:
 	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
-	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
-	/*background-color: orange;*/
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);*/
 }
 
 .col-md-9 {
 	z-index: -1;
 	height: 100%;
 
+	/*FOR SHADING:
 	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
-	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
-	/*background-color: grey;*/
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);*/
 }
 
 .portrait {
@@ -90,8 +90,8 @@ body {
 }
 
 .the-code-header {
-	font-size: 5vw;
-	font-family: 'Anonymous Pro', monospace;
+	font-size: 4vw;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 
@@ -100,8 +100,14 @@ body {
 }
 
 .the-code-body {
-	font-size: 2vw;
-	font-family: 'Anonymous Pro', monospace;	
+	font-size: 1.75vw;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.the-code-comment {
+	margin-top: -13px;
+	font-size: 1.75vw;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .green {
@@ -122,4 +128,8 @@ body {
 
 .italic {
 	font-style: italic;
+}
+
+.orange {
+	color: #FD971F;
 }
