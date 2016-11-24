@@ -102,6 +102,10 @@ a:hover {
 	height: 100%;
 }
 
+.bio-wrapper-home {
+	width: 100%;
+}
+
 /*//////////////////////////*/
 /*PICTURES PICTURES PICTURES*/
 /*//////////////////////////*/
@@ -143,17 +147,22 @@ a:hover {
 /*BODY BODY BODY*/
 /*//////////////*/
 .the-code-header {
-	font-size: 3vw;
+	font-size: 4vw;
 	font-family: 'Roboto Slab', serif;
 }
 
 .the-code-comment {
-	font-size: 2vw;
+	font-size: 1.5vw;
 	font-family: 'Roboto Slab', serif;
 }
 
 .the-code-body {
-	margin-top: -13px;
+	margin-top: -1.5%;
+	font-size: 2vw;
+	font-family: 'Roboto Slab', serif;
+}
+
+.the-code-priv-pub {
 	font-size: 2vw;
 	font-family: 'Roboto Slab', serif;
 }
@@ -161,12 +170,12 @@ a:hover {
 .text-Header {
 	font-size: 4.5vw;
 	font-style: bold;
-	font-family: 'Karla', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
 }
 
 .text-Body {
 	font-size: 1.2vw;
-	font-family: 'Karla', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
 }
 
 /*////////////////////*/
@@ -226,6 +235,15 @@ a:hover {
 
 .center {
 	text-align: center;
+}
+
+.center-home {
+	text-align: left;
+	margin-left: 16%;
+}
+
+.left-pad-home {
+	margin-left: 5%;
 }
 
 .thin-underline-orange {
