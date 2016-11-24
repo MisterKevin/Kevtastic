@@ -75,8 +75,8 @@ a:hover {
 	border-right: 2px solid #75715E;
 
 	/*FOR SHADING:*/
-	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.1);
-	box-shadow: inset 0 0 100px rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
 }
 
 .col-md-9 {
@@ -130,32 +130,43 @@ a:hover {
 .portrait-caption {
 	color: white;
 	font-size: 5vw;
-	font-family: 'VT323', monospace;
+	font-family: 'Amaranth', sans-serif;
 }
 
 .portrait-caption-info {
 	color: white;
 	font-size: 1.5vw;
-	font-family: 'VT323', monospace;
+	font-family: 'Amaranth', sans-serif;
 }
 
 /*//////////////*/
 /*BODY BODY BODY*/
 /*//////////////*/
 .the-code-header {
-	font-size: 4vw;
-	font-family: 'Ubuntu', sans-serif;
+	font-size: 3vw;
+	font-family: 'Roboto Slab', serif;
 }
 
 .the-code-comment {
-	font-size: 1.75vw;
-	font-family: 'Ubuntu', sans-serif;
+	font-size: 2vw;
+	font-family: 'Roboto Slab', serif;
 }
 
 .the-code-body {
 	margin-top: -13px;
-	font-size: 1.75vw;
-	font-family: 'Ubuntu', sans-serif;
+	font-size: 2vw;
+	font-family: 'Roboto Slab', serif;
+}
+
+.text-Header {
+	font-size: 4.5vw;
+	font-style: bold;
+	font-family: 'Karla', sans-serif;
+}
+
+.text-Body {
+	font-size: 1.2vw;
+	font-family: 'Karla', sans-serif;
 }
 
 /*////////////////////*/

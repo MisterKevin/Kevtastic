@@ -4,7 +4,7 @@ $(document).ready(function() {
 	history.replaceState(stateObject, "", "");
 
 	// Show home
-	home_info();
+	// home_info();
 });
 
 $(document).delegate('.front_door_image', 'click', function(event)
@@ -102,7 +102,7 @@ function home_info()
 					</p>\
 					\
 					<p class=\"the-code-comment\">\
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// All about me!</span>\
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// All about me</span>\
 					</p>\
 					\
 					<p class=\"the-code-body\">\
@@ -110,7 +110,7 @@ function home_info()
 					</p><br>\
 					\
 					<p class=\"the-code-comment\">\
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// My experiences.</span>\
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// My experiences</span>\
 					</p>\
 					\
 					<p class=\"the-code-body\">\
@@ -118,11 +118,11 @@ function home_info()
 					</p><br>\
 					\
 					<p class=\"the-code-comment\">\
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// Low-key lonely, say hi!</span>\
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"grey\">// Say hello!</span>\
 					</p>\
 					\
 					<p class=\"the-code-body\">\
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"white\">string&nbsp;</span><a href=\"\"><span class=\"green\">contactMe</span><span class=\"white\">(string</span><span class=\"pink\">&</span><span class=\"orange\">name</span><span class=\"white\">, string</span><span class=\"pink\">&</span><span class=\"orange\">email</span><span class=\"white\">, string</span><span class=\"pink\">&</span><span class=\"orange\">body</span><span class=\"white\">)</span></a><span class=\"white\">;</span>\
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"white\">string&nbsp;</span><a href=\"\"><span class=\"green\">contact</span><span class=\"white\">(string</span><span class=\"pink\">&</span><span class=\"orange\">name</span><span class=\"white\">, string</span><span class=\"pink\">&</span><span class=\"orange\">email</span><span class=\"white\">, string</span><span class=\"pink\">&</span><span class=\"orange\">body</span><span class=\"white\">)</span></a><span class=\"white\">;</span>\
 					</p><br>\
 					\
 					<!-- Private: -->\
