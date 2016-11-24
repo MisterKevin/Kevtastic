@@ -35,80 +35,33 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	</head>
 
-	<body>
+	<body id="test">
 		<div class="front_door_image"></div>
  
 		<div class="container-fluid" id="container-override">
 			<div class="row-fluid">
 				<div class="col-md-3">
-					<!-- <span class="vcenter"></span> -->
-					<!-- <p class="portrait_caption">Hey, World! I'm Kevin Lee.</p> -->
-					<div class="bio-wrapper"> 
+					<div class="bio-wrapper-3"> 
 						<img src="images/its_me_3.jpg" class="portrait">
-						<p class="portrait-caption">KEVIN LEE</p>
+						<span class="portrait-caption clickable">KEVIN LEE</span>
 						<br><br>
 						<p class="portrait-caption-info"><span class="pink">/*</span>  <span class="pink">----</span><span class="green">-----</span><span class="cyan">----</span><span class="orange">☆</span><span class="cyan">----</span><span class="green">-----</span><span class="pink">----</span> <span class="pink">*/</span></p><br><br><p class="portrait-caption-info">University of Michigan '17<br>Computer Science Major<br>Music Minor</p><br>
 					</div>
 				</div>
-				<div class="col-md-9">
-					<p class="the-code-header"><span class="cyan italic">class</span><span class="green"> &nbsp;KevKev</span><span class="white"> {</span></p>
-
-					<!-- Public: -->
-					<p class="the-code-comment">
-						<span class="pink">public:</span>
-					</p>
-
-					<p class="the-code-comment">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// All about me!</span>
-					</p>
-
-					<p class="the-code-body">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=""><span class="green">KevKev</span><span class="white">()</span></a><span class="white">;</span>
-					</p><br>
-
-					<p class="the-code-comment">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// Self-explanatory.</span>
-					</p>
-
-					<p class="the-code-body">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="white">list&#8249;string&#8250;&nbsp;</span><a href=""><span class="green">resume</span><span class="white">()</span></a><span class="white">;</span>
-					</p><br>
-
-					<p class="the-code-comment">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// Low-key lonely, say hi!</span>
-					</p>
-
-					<p class="the-code-body">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="white">string&nbsp;</span><a href=""><span class="green">contactMe</span><span class="white">(string</span><span class="pink">&</span><span class="orange">name</span><span class="white">, string</span><span class="pink">&</span><span class="orange">email</span><span class="white">, string</span><span class="pink">&</span><span class="orange">body</span><span class="white">)</span></a><span class="white">;</span>
-					</p><br>
-					
-					<!-- Private: -->
-					<p class="the-code-comment">
-						<span class="pink">private:</span>
-					</p>
-
-					<p class="the-code-comment">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// Mine.</span>
-					</p>
-
-					<p class="the-code-body">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="white">list&#8249;string&#8250;&nbsp;</span><a href=""><span class="green">myDiary</span><span class="white">()</span></a><span class="white">;</span>
-					</p><br>
-
-					<p class="the-code-comment">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// pls.</span>
-					</p>
-
-					<p class="the-code-body">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="white">list&#8249;string&#8250;&nbsp;</span><a href=""><span class="green">myFeelings</span><span class="white">()</span></a><span class="white">;</span>
-					</p>
-
-					<p class="the-code-header">
-						<span class="white">};</span>
-					</p>
+				<!-- Dynamically Update -->
+				<div class="col-md-9" id="col-9">
+					<!-- <div class="bio-wrapper-center" id="info"> -->
+						<!-- <p class="the-code-header white center"><u>Kevin Lee</u></p> -->
+					<!-- </div> -->
 				</div>
 			</div>
 		</div>
+
+		<form action="test.py" method="post">
+				<input type="hidden" name="op" value="add">
+				<td>New: <input id="album_add_name" type="text" name="title"></td>
+				<td><input id="album_add_submit" type="submit" value="Add"></td>
+			</form>
 
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
