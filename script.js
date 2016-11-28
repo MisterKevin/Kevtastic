@@ -3,21 +3,21 @@ $(document).ready(function() {
 	var stateObject = { url: "home" };
 	history.replaceState(stateObject, "", "");
 
-	$('#col-9').css('opacity', '0');
-	$('#col-9').css('left', '+10%');
+	// $('#col-9').css('opacity', '0');
+	// $('#col-9').css('left', '+10%');
 });
 
 $(document).delegate('.front_door_image', 'click', function(event)
 {
 	$(".front_door_image").fadeOut(function() {
-		// Write home-info
-		home_info();
+		// // Write home-info
+		// home_info();
 
-		// Write information
-		$('#col-9').velocity({
-			opacity: 1,
-			"left": "-=10%"
-		}, 500);
+		// // Write information
+		// $('#col-9').velocity({
+		// 	opacity: 1,
+		// 	"left": "-=10%"
+		// }, 500);
 	});
 });
 
@@ -109,19 +109,19 @@ function about_info()
 	$('#col-9').append("<div class=\"bio-wrapper-center\" id=\"info\">");
 
 	// Body
-	$('#info').append("<p class=\"text-Header white thin-underline-orange center\">About Me</p>\
+	$('#info').append("<p class=\"text-header white thin-underline-orange center\">About Me</p>\
 					<br>\
-					<p class=\"text-Body white word-wrap\">Hi, I'm <span class=\"cyan\">Kevin Lee</span>!</p><br>\
+					<p class=\"text-body white word-wrap\">Hi, I'm <span class=\"cyan\">Kevin Lee</span>!</p><br>\
 					\
-					<p class=\"text-Body white word-wrap\">I am a current <span class=\"pink\">senior in the University of Michigan</span>, studying <span class=\"pink\">Computer Science with a minor in Music</span>. My major and minor accurately reflect my interests; I am a creative and analytical student who is passionate about <span class=\"pink\">Software Engineering and the Creative Arts</span>.</p><br>\
+					<p class=\"text-body white word-wrap\">I am a current <span class=\"pink\">senior in the University of Michigan</span>, studying <span class=\"pink\">Computer Science with a minor in Music</span>. My major and minor accurately reflect my interests; I am a creative and analytical student who is passionate about <span class=\"pink\">Software Engineering and the Creative Arts</span>.</p><br>\
 					\
-					<p class=\"text-Body white word-wrap\"><span class=\"orange\">Software Engineering</span>: Creativity and logic, a perfect mix! I had my first \"Hello World\" experience just three years ago, and have had two software engineering internships since then. I enjoy the problem-solving and puzzle-cracking aspect of software engineering, and am looking forward to working <span class=\"green\">full-time with Microsoft</span> in Seattle after I graduate!</p><br>\
+					<p class=\"text-body white word-wrap\"><span class=\"orange border-bottom-orange\">Software Engineering</span>: Logic and creativity, a perfect mix! I had my first \"Hello World\" experience just three years ago, and have had two software engineering internships since then. I enjoy the problem-solving and puzzle-cracking aspect of software engineering, and am looking forward to working <span class=\"green\">full-time with Microsoft</span> in Seattle after I graduate.</p><br>\
 					\
-					<p class=\"text-Body white word-wrap\"><span class=\"orange\">Creative Arts</span>: Music keeps me <i>sane</i>. My primary instrument is the <span class=\"green\">two-string Chinese fiddle: the Erhu</span>, and secondaries would be the piano and violin. <span class=\"green\">Music theory and composition</span>, however, is where my heart lies in music. It's a wonderful subject, infinitely complex, and has intrigued me ever since I first learned the Circle of Fifths.</p><br>\
+					<p class=\"text-body white word-wrap\"><span class=\"orange border-bottom-orange\">Creative Arts</span>: Music keeps me sane. My primary instrument is the <span class=\"green\">two-string Chinese fiddle: the Erhu</span>, and secondaries would be the piano and violin. <span class=\"green\">Music theory and composition</span>, however, is where my heart lies in music. It's a wonderful subject, infinitely complex, and has intrigued me ever since I first learned the Circle of Fifths.</p><br>\
 					\
-					<p class=\"text-Body white word-wrap\"><span class=\"orange\">Extracurriculars</span>: I am currently an Instructional Aide for <span class=\"green\">EECS 183: \"Elementary Programming Concepts\"</span> at this university and am a board member on the <span class=\"green\">College of Engineering's Undergraduate Student Advisory Board</span>, helping represent CS-LSA for all undergraduates. Outside of school, I have to admit that video games are pretty neat! I'm an avid gamer in my free time.</p><br>\
+					<p class=\"text-body white word-wrap\"><span class=\"orange border-bottom-orange\">Extracurriculars</span>: I am currently an Instructional Aide for <span class=\"green\">EECS 183: \"Elementary Programming Concepts\"</span> at this university and am a board member on the <span class=\"green\">College of Engineering's Undergraduate Student Advisory Board</span>, helping represent CS-LSA for all undergraduates. Outside of school, I have to admit that video games are pretty neat! I'm an avid gamer in my free time.</p><br>\
 					\
-					<p class=\"text-Body white word-wrap\">Sincere thank you for visiting my website! I hope you have a wonderful time exploring here. :)<br><br>Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
+					<p class=\"text-body white word-wrap\">Thank you for visiting my website, and I hope you have a wonderful time exploring here. :)<br><br>Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
 					</div>");
 
 	// Closing div
