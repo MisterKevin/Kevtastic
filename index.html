@@ -44,7 +44,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
 	</head>
 
-	<body id="test">
+	<body id="body-wrapper">
 		<div class="front_door_image"></div>
  
 		<div class="container-fluid" id="container-override">
@@ -60,46 +60,75 @@
 				<!-- Dynamically Update -->
 				<div class="col-md-9" id="col-9">
 					<div class="bio-wrapper-center" id="info">
-						<p class="text-header white center thin-underline-orange">Resume</p>
-
-						<div class="col-md-12">
-							<p class="text-header-2 white left cyan"><span class="border-bottom-cyan">Education</span></p>
-						</div>
+						<p class="text-header-raleway white center thin-underline-orange">Resume</p>
 
 						<div class="col-md-6">
-							<p class="white text-body"><b><span class="tab">University of Michigan - Bachelor's of Science</span></b></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Ann Arbor, MI | Fall '13 - May '17</span></span></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Major: Computer Science | Minor: Music | GPA: 3.3 / 4.0</span></span></p>
+							<!-- Education -->
+							<p class="text-header-raleway-2 white left cyan"><span class="border-bottom-cyan">Education</span></p>
+
+							<!-- Listing Education -->
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> University of Michigan - Bachelor's of Science</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Ann Arbor, MI | Fall '13 - May '17</span></span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Major: Computer Science | Minor: Music | GPA: 3.3 / 4.0</span></span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> International Academy - International Baccalaureate Diploma</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Bloomfield Hills, MI | Fall '09 - Winter '13</span></span></p>
+
+							<!-- Extracurriculars -->
+							<p class="text-header-raleway-2 white left cyan"><span class="border-bottom-cyan">Extracurriculars</span></p>
+
+							<!-- Listing Extracurriculars -->
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> CoE Undergraduate Student Advisory Board Member</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Fall '16 - <i>Present</i></span></span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Michigan Hope Volunteering</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Fall '15 - <i>Present</i></span></span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Computer Science Engineering Scholars</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Winter '15 - <i>Present</i></span></span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Philip Hayden Foundation Volunteer</span></p>
+							<p class="grey-text text-body-raleway-subtext margin-top-left-small"><span class="tab"><span class="tab">Winter '13</span></span></p>
+
+							<!-- Key Courses -->
+							<p class="text-header-raleway-2 white left cyan"><span class="border-bottom-cyan">Key Courses Taken</span></p>
+
+							<!-- Listing Key Courses -->
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> EECS 482: Operating Systems</span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> EECS 388: Computer Security</span></p>
+
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> EECS 485: Web Database and Information Systems</span></p>
+
+							<!-- Profiencies -->
+							<p class="text-header-raleway-2 white left cyan"><span class="border-bottom-cyan">Key Skills</span></p>
+
+							<!-- Listing Profiencies -->
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Primary: C++11, Python, C, OpenGL</span></p>
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Secondary: Multithreading, HTML/CSS, Boost.Asio, SQL</span></p>
+							<p class="white text-body-raleway"><span class="tab"><span class="orange"><b>></b></span> Tertiary: C++14, R, Javascript, Java, OpenCV</span></p>
 						</div>
+						<div class="col-md-6" id="experience-wrapper">
+							<!-- Education -->
+							<p class="text-header-raleway-2 white left cyan"><span class="border-bottom-cyan">Experience</span></p>
 
-						<div class="col-md-12">
-							<p class="text-header-2 white left cyan"><span class="border-bottom-cyan">Extracurriculars</span></p>
-						</div>
+							<!-- Listing Education -->
+							<div class="experience" id="experience-wolverine-trading">
+								<p class="white text-body-raleway center"><b><span class="white">Software Engineer Intern</span></b> with <b>Wolverine Trading, LLC</b><br>Chicago, IL | Summer '16</p>
+							</div>
 
-						<div class="col-md-6">
-							<p class="white text-body"><span class="tab">CoE Undergraduate Student Advisory Board</span></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Fall '16 - <i>Present</i></span></span></p>
+							<div class="experience" id="experience-MDP">
+								<p class="white text-body-raleway center"><span class="tab"><b><span class="pink">Multidisciplinary Design Program</span></b> with <b>MDA Information Systems LLC</b> in Ypsilanti, MI from Winter '16 to Fall '16.</span></p>
+							</div>
 
-							<p class="white text-body margin-top-left-small"><span class="tab">Michigan Hope Volunteering</span></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Fall '15 - <i>Present</i></span></span></p>
+							<div class="experience" id="experience-ak">
+								<p class="white text-body-raleway center"><span class="tab"><b><span class="pink">Process Control Intern</span></b> with <b>AK Steel Corporation</b> in Dearborn, MI during Summer '15.</span></p>
+							</div>
+							
+							<div class="experience" id="experience-183">
+								<p class="white text-body-raleway center"><span class="tab"><b><span class="pink">EECS 183 Instructional Aide</span></b> with University of Michigan in Ann Arbor, MI from Fall '15 to Present.</span></p>
+							</div>
 
-							<p class="white text-body margin-top-left-small"><span class="tab">Computer Science Engineering Scholars</span></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Winter '15 - <i>Present</i></span></span></p>
-
-							<p class="white text-body margin-top-left-small"><span class="tab">Philip Hayden Foundation Volunteer</span></p>
-							<p class="white text-body-subtext margin-top-left-small"><span class="tab"><span class="tab">Winter '13</span></span></p>
-						</div>
-						<div class="col-md-3">
-							<p class="white text-body left"><i>USAB</i></p>
-							<p class="white text-body left margin-top-small"><i>MHope</i></p>
-							<p class="white text-body left margin-top-small"><i>Scholars</i></p>
-							<p class="white text-body left margin-top-small"><i>-</i></p>
-						</div>
-						<div class="col-md-3">
-							<p class="white text-body right">Fall '16 - <i>Present</i></p>
-							<p class="white text-body right margin-top-small">Fall '15 - <i>Present</i></p>
-							<p class="white text-body right margin-top-small">Winter '15 - <i>Present</i></p>
-							<p class="white text-body right margin-top-small">Winter '13</p>
 						</div>
 					</div>
 				</div>

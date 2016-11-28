@@ -1,3 +1,8 @@
+var experience_wolverine_trading_bool = false;
+var newHTML;
+var oldHeight = 0;
+var done = true;
+
 $(document).ready(function() {
 	// ReplaceState
 	var stateObject = { url: "home" };
@@ -7,7 +12,7 @@ $(document).ready(function() {
 	// $('#col-9').css('left', '+10%');
 });
 
-$(document).delegate('.front_door_image', 'click', function(event)
+$(document).delegate('.front_door_image', 'click touchstart', function(event)
 {
 	$(".front_door_image").fadeOut(function() {
 		// // Write home-info
@@ -21,19 +26,91 @@ $(document).delegate('.front_door_image', 'click', function(event)
 	});
 });
 
-$(document).delegate('#about', 'click', function(event)
+$(document).delegate('#about', 'click touchstart', function(event)
 {
 	update_screen("about", about_info);
 });
 
-$(document).delegate('#resume', 'click', function(event)
+$(document).delegate('#resume', 'click touchstart', function(event)
 {
 	update_screen("resume", resume_info);
 });
 
-$(document).delegate('.portrait-caption', 'click', function(event)
+$(document).delegate('.portrait-caption', 'click touchstart', function(event)
 {
 	update_screen("home", home_info);
+});
+
+$(document).delegate('#experience-wolverine-trading', 'click touchstart', function(event)
+{
+	console.log("Clicked");
+	if (!done) 
+	{
+		console.log("Animation going");
+		return;
+	}
+
+	done = false;
+	if ($(':animated').length) {
+		console.log("ANIMATION GOING");
+		return false;
+	}
+	if (experience_wolverine_trading_bool) 
+	{ // Already opened
+		experience_wolverine_trading_bool = false;
+
+		$('#wolverine-trading-div').velocity({
+			opacity: 0
+		}, 300, function() {
+			// Animation complete, now shrink and delete
+			$('#wolverine-trading-div').remove();
+
+			$('#experience-wolverine-trading').velocity({
+				height: oldHeight
+			}, 500, function() {
+				done = true;
+			});
+		});
+
+	}
+	else 
+	{ // Closing
+		experience_wolverine_trading_bool = true;
+
+		newHTML = $("<div class=\"col-md-4\" id=\"temp_sizer\" style=\"position : absolute; left : -9999px;\">" + wolverine_trading_info_text() + "</div>").appendTo('body');
+
+		oldHeight = $('#experience-wolverine-trading').height();
+		console.log(newHTML.height());
+		console.log(oldHeight);
+		var newHeight = newHTML.height() + oldHeight;
+		
+		// Delete temp div
+		$('#temp_sizer').remove();
+
+		$('#experience-wolverine-trading').velocity({
+			height: newHeight
+		}, 500, function() {
+			// Create wrapper
+			$('#experience-wolverine-trading').append("<div id=\"wolverine-trading-div\">");
+
+			// Set opacity to zero
+			$('#wolverine-trading-div').css('opacity', '0');
+			$('#wolverine-trading-div').css('margin-left', '4%');
+
+			// Insert actual data
+			wolverine_trading_info();
+
+			// End div
+			$('#experience-wolverine-trading').append("</div>");
+
+			// Animation
+			$('#wolverine-trading-div').velocity({
+				opacity: 1,
+			}, 300, function() {
+				done = true;
+			});
+		});
+	}
 });
 
 function update_screen(url, func)
@@ -194,3 +271,17 @@ function home_info()
 	// Closing div
 	$('#col-9').append("</div>");
 };
+
+function wolverine_trading_info() {
+	$('#wolverine-trading-div').append("<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>");
+}
+
+function wolverine_trading_info_text() {
+	return "<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>";
+}
