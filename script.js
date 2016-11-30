@@ -10,6 +10,8 @@ $(document).ready(function() {
 
 	// $('#col-9').css('opacity', '0');
 	// $('#col-9').css('left', '+10%');
+	$('#experience-wt-text').css('top', $('#experience-wolverine-trading').offset().top + (((parseInt($('#experience-wolverine-trading').css('top')) + parseInt($('#experience-wolverine-trading').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
+	$('#experience-wt-text').css('left', $('#experience-wolverine-trading').offset().left + (((parseInt($('#experience-wolverine-trading').css('left')) + parseInt($('#experience-wolverine-trading').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
 });
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
@@ -41,49 +43,51 @@ $(document).delegate('.portrait-caption', 'click touchstart', function(event)
 	update_screen("home", home_info);
 });
 
+$('.experience').on('click', 'div', (function(event)
+{
+	console.log("CLICKED\n");
+}));
+
 $(document).delegate('#experience-wolverine-trading', 'click touchstart', function(event)
 {
-	console.log("Clicked");
 	if (!done) 
-	{
-		console.log("Animation going");
+	{ // Stopping animation from happening while one currently active
 		return;
 	}
-
 	done = false;
-	if ($(':animated').length) {
-		console.log("ANIMATION GOING");
-		return false;
-	}
+
 	if (experience_wolverine_trading_bool) 
 	{ // Already opened
 		experience_wolverine_trading_bool = false;
 
+		// Animation for removing text
 		$('#wolverine-trading-div').velocity({
 			opacity: 0
 		}, 300, function() {
 			// Animation complete, now shrink and delete
 			$('#wolverine-trading-div').remove();
-
-			$('#experience-wolverine-trading').velocity({
-				height: oldHeight
-			}, 500, function() {
-				done = true;
-			});
 		});
 
+		// Animation for shinking div
+		$('#experience-wolverine-trading').velocity({
+			height: oldHeight
+		}, 500, function() {
+			done = true;
+		});
+
+		// Animation for moving wt-text
+		$('#experience-wt-text').velocity({
+			top: "+=" + (((parseInt($('#experience-wolverine-trading').css('top')) + oldHeight) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2))
+		}, 500);
 	}
 	else 
 	{ // Closing
 		experience_wolverine_trading_bool = true;
 
-		newHTML = $("<div class=\"col-md-4\" id=\"temp_sizer\" style=\"position : absolute; left : -9999px;\">" + wolverine_trading_info_text() + "</div>").appendTo('body');
-
+		newHTML = $("<div id=\"temp_sizer\" style=\"position : relative;\">" + wolverine_trading_info_text() + "</div>").appendTo('#experience-wrapper');
 		oldHeight = $('#experience-wolverine-trading').height();
-		console.log(newHTML.height());
-		console.log(oldHeight);
-		var newHeight = newHTML.height() + oldHeight;
-		
+		var newHeight = newHTML.height() + 10; // Padding
+
 		// Delete temp div
 		$('#temp_sizer').remove();
 
@@ -103,14 +107,25 @@ $(document).delegate('#experience-wolverine-trading', 'click touchstart', functi
 			// End div
 			$('#experience-wolverine-trading').append("</div>");
 
-			// Animation
+			// Animation to show text
 			$('#wolverine-trading-div').velocity({
 				opacity: 1,
 			}, 300, function() {
 				done = true;
 			});
 		});
+
+		$('#experience-wt-text').velocity({
+			top: $('#experience-wolverine-trading').offset().top
+		}, 500, function() {
+			console.log("DONE");
+		});
 	}
+});
+
+$(window).resize(function() {
+	$('#experience-wt-text').css('top', $('#experience-wolverine-trading').offset().top + (((parseInt($('#experience-wolverine-trading').css('top')) + parseInt($('#experience-wolverine-trading').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
+	$('#experience-wt-text').css('left', $('#experience-wolverine-trading').offset().left + (((parseInt($('#experience-wolverine-trading').css('left')) + parseInt($('#experience-wolverine-trading').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
 });
 
 function update_screen(url, func)
@@ -273,15 +288,17 @@ function home_info()
 };
 
 function wolverine_trading_info() {
-	$('#wolverine-trading-div').append("<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
-							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</span></p>\
+	$('#wolverine-trading-div').append("<p class=\"white text-body-raleway center\" style=\"opacity: 0\"><b><span class=\"white\">Software Engineer Intern</span></b> with <b>Wolverine Trading, LLC</b><br>Chicago, IL | Summer '16</p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\" style=\"left: 0px\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</p>\
 							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
 							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>");
 }
 
 function wolverine_trading_info_text() {
-	return "<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
-							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</span></p>\
-							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
-							<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>";
+	return "<p class=\"white text-body-raleway center\"><b><span class=\"white\">Software Engineer Intern</span></b> with <b>Wolverine Trading, LLC</b><br>Chicago, IL | Summer '16</p>\
+			<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+			<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</span></p>\
+			<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
+			<p class=\"white text-body-raleway-subtext line-height-change\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>";
 }

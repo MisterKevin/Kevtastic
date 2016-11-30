@@ -368,8 +368,8 @@ a:hover {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	/*justify-content: center;*/
+	/*align-items: center;*/
 	background-color: #0d0d0d;
 }
 
@@ -386,4 +386,8 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	opacity: 0.2;
+}
+
+#experience-wt-text {
+	position: fixed;
 }
