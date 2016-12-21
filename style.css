@@ -11,7 +11,7 @@ html {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 ::selection {
@@ -87,7 +87,7 @@ a:hover {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	overflow: hidden;
+	overflow-x: hidden;
 	/*justify-content: center;*/
 
 	/*FOR SHADING:
@@ -104,12 +104,36 @@ a:hover {
 
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
+}
+
+.bio-wrapper-center-about-header {
+	padding: 0;
+	margin: 0;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.bio-wrapper-center-about-body {
+	padding: 0;
+
+	top: 0;
+	left: 0;
+
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+	overflow-x: hidden;	
 }
 
 .bio-wrapper-home {
 	width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 /*//////////////////////////*/
@@ -349,6 +373,10 @@ a:hover {
 	margin-top: -2%;
 }
 
+.justified {
+	text-align: justify;
+}
+
 /*//////////////////*/
 /*EXPERIENCE SECTION*/
 /*//////////////////*/
@@ -363,13 +391,11 @@ a:hover {
 	height: 85%;
 }
 
-#experience-wolverine-trading {
+#experience-wolverine-trading, #experience-MDP, #experience-ak, #experience-183 {
 	z-index: 1;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	/*justify-content: center;*/
-	/*align-items: center;*/
 	background-color: #0d0d0d;
 }
 
@@ -388,6 +414,25 @@ a:hover {
 	opacity: 0.2;
 }
 
-#experience-wt-text {
+#experience-MDP:after {
+	content: ' ';
+	background-image: url(images/wolverine-trading.png);
+	background-size: 100% 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+}
+
+#experience-wt-text, #experience-mdp-text, #experience-ak-text, #experience-183-text {
 	position: fixed;
+}
+
+.resume-left-container {
+	height: auto;
 }
