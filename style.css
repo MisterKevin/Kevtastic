@@ -236,8 +236,9 @@ a:hover {
 	font-family: 'Raleway', sans-serif;
 }
 
-.line-height-change {
+.experience-subtext {
 	line-height: 20px;
+	padding-right: 5%;
 }
 
 .text-body-raleway-subtext {
@@ -391,7 +392,7 @@ a:hover {
 	height: 85%;
 }
 
-#experience-wolverine-trading, #experience-MDP, #experience-ak, #experience-183 {
+#experience-wolverine-trading, #experience-mdp, #experience-ak, #experience-183 {
 	z-index: 1;
 	position: relative;
 	display: flex;

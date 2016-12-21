@@ -10,8 +10,8 @@ $(document).ready(function() {
 	// $('#col-9').css('left', '+10%');
 	$('#experience-wt-text').css('top', $('#experience-wolverine-trading').offset().top + (((parseInt($('#experience-wolverine-trading').css('top')) + parseInt($('#experience-wolverine-trading').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
 	$('#experience-wt-text').css('left', $('#experience-wolverine-trading').offset().left + (((parseInt($('#experience-wolverine-trading').css('left')) + parseInt($('#experience-wolverine-trading').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
-	$('#experience-mdp-text').css('top', $('#experience-MDP').offset().top + (((parseInt($('#experience-MDP').css('top')) + parseInt($('#experience-MDP').css('height'))) / 2) - (parseInt($('#experience-mdp-text').css('height')) / 2)));
-	$('#experience-mdp-text').css('left', $('#experience-MDP').offset().left + (((parseInt($('#experience-MDP').css('left')) + parseInt($('#experience-MDP').css('width'))) / 2) - (parseInt($('#experience-mdp-text').css('width')) / 2)));
+	$('#experience-mdp-text').css('top', $('#experience-mdp').offset().top + (((parseInt($('#experience-mdp').css('top')) + parseInt($('#experience-mdp').css('height'))) / 2) - (parseInt($('#experience-mdp-text').css('height')) / 2)));
+	$('#experience-mdp-text').css('left', $('#experience-mdp').offset().left + (((parseInt($('#experience-mdp').css('left')) + parseInt($('#experience-mdp').css('width'))) / 2) - (parseInt($('#experience-mdp-text').css('width')) / 2)));
 });
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
@@ -45,14 +45,6 @@ $(document).delegate('.portrait-caption', 'click touchstart', function(event)
 {
 	state = "home";
 	update_screen("home", home_info);
-});
-
-$(window).resize(function() {
-	if (state == "resume")
-	{
-		$('#experience-wt-text').css('top', $('#experience-wolverine-trading').offset().top + (((parseInt($('#experience-wolverine-trading').css('top')) + parseInt($('#experience-wolverine-trading').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
-		$('#experience-wt-text').css('left', $('#experience-wolverine-trading').offset().left + (((parseInt($('#experience-wolverine-trading').css('left')) + parseInt($('#experience-wolverine-trading').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
-	}
 });
 
 function update_screen(url, func)
@@ -109,6 +101,14 @@ window.onpopstate = function(event)
 		}, 500);
 	});
 }
+
+$(window).resize(function() {
+	if (state == "resume")
+	{
+		$('#experience-wt-text').css('top', $('#experience-wolverine-trading').offset().top + (((parseInt($('#experience-wolverine-trading').css('top')) + parseInt($('#experience-wolverine-trading').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
+		$('#experience-wt-text').css('left', $('#experience-wolverine-trading').offset().left + (((parseInt($('#experience-wolverine-trading').css('left')) + parseInt($('#experience-wolverine-trading').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
+	}
+});
 
 function home_info()
 {
