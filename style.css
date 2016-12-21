@@ -412,12 +412,12 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
+	opacity: 0.165;
 }
 
-#experience-MDP:after {
+#experience-mdp:after {
 	content: ' ';
-	background-image: url(images/wolverine-trading.png);
+	background-image: url(images/MDA.png);
 	background-size: 100% 100%;
 	display: block;
 	position: absolute;
@@ -427,7 +427,37 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
+	opacity: 0.165;
+}
+
+#experience-ak:after {
+	content: ' ';
+	background-image: url(images/ak_steel.png);
+	background-size: 100% 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.165;
+}
+
+#experience-183:after {
+	content: ' ';
+	background-image: url(images/block_M.png);
+	background-size: 100% 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.165;
 }
 
 #experience-wt-text, #experience-mdp-text, #experience-ak-text, #experience-183-text {

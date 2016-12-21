@@ -23,6 +23,21 @@ $(document).delegate('#experience-wolverine-trading', 'click touchstart', functi
 	show_experience('#wolverine-trading-div', '#experience-wolverine-trading', '#experience-wt-text', 'wolve_bool', wolverine_trading_text);
 });
 
+$(document).delegate('#experience-mdp', 'click touchstart', function(event)
+{
+	show_experience('#experience-mdp-div', '#experience-mdp', '#experience-mdp-text', 'mdp_bool', mdp_text);
+});
+
+$(document).delegate('#experience-ak', 'click touchstart', function(event)
+{
+	show_experience('#experience-ak-div', '#experience-ak', '#experience-ak-text', 'ak_bool', ak_text);
+});
+
+$(document).delegate('#experience-183', 'click touchstart', function(event)
+{
+	show_experience('#experience-183-div', '#experience-183', '#experience-183-text', 'eecs_183_bool', eecs_183_text);
+});
+
 function show_experience(experience_div, experience_id, experience_text_id, bool_index, text_func)
 {
 	if (!done) 
@@ -50,10 +65,16 @@ function show_experience(experience_div, experience_id, experience_text_id, bool
 		}, 500, function() {
 			done = true;
 		});
+		
+		// Animation for moving text div back to center
+		var original_mid_val = ((($('#experience-wrapper').height() * .21) / 2) - (parseInt($(experience_text_id).css('height')) / 2));
+		if (experience_id != experience_ids[0]) // Check for shrinkage, if not first div
+		{
+			original_mid_val += ($('#experience-wrapper').height() * .21) - ($('#experience-wrapper').height() * .15);
+		}
 
-		// Animation for moving text div
 		$(experience_text_id).velocity({
-			top: "+=" + (((parseInt($(experience_id).css('top')) + oldHeight) / 2) - (parseInt($(experience_text_id).css('height')) / 2))
+			top: "+=" + original_mid_val
 		}, 500);
 
 		// Extend all other divs
@@ -102,8 +123,15 @@ function show_experience(experience_div, experience_id, experience_text_id, bool
 		});
 
 		// Move current text
+		var text_offset = $(experience_id).offset().top;
+		
+		if (experience_id != experience_ids[0])
+		{ // Need to account for the div above it shrinking
+			text_offset -= ($('#experience-wrapper').height() * .21) - ($('#experience-wrapper').height() * .15);
+		}
+		
 		$(experience_text_id).velocity({
-			top: $(experience_id).offset().top
+			top: text_offset
 		}, 500);
 
 		// Shrink all other divs
@@ -111,7 +139,7 @@ function show_experience(experience_div, experience_id, experience_text_id, bool
 			if (value != experience_id)
 			{ // Don't want to shrink the current id
 				$(value).velocity({
-					height: "16%"
+					height: "15%"
 				}, 500);
 			}
 		});
@@ -137,6 +165,24 @@ function wolverine_trading_text(to_append) {
 }
 
 function mdp_text(to_append) {
+	var text = "<p class=\"white text-body-raleway center\" style=\"opacity: 0\"><b><span class=\"white\">Multidisciplinary Design Program</span></b> with <b>MDA Information Systems</b><br>Ypsilanti, MI | Winter '16 to Fall '16</p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>";
+
+	// Only append text if boolean is true
+	if (to_append)
+	{ // Append text, don't return
+		$('#experience-mdp-div').append(text);
+	}
+	else
+	{ // Just return text otherwise
+		return text;
+	}
+}
+
+function ak_text(to_append) {
 	var text = "<p class=\"white text-body-raleway center\" style=\"opacity: 0\"><b><span class=\"white\">Multidisciplinary Design Program</span></b> with <b>MDA Information Systems LLC</b><br>Ypsilanti, MI | Winter '16 to Fall '16</p>\
 							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
 							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</p>\
@@ -146,7 +192,25 @@ function mdp_text(to_append) {
 	// Only append text if boolean is true
 	if (to_append)
 	{ // Append text, don't return
-		$('#wolverine-trading-div').append(text);
+		$('#experience-ak-div').append(text);
+	}
+	else
+	{ // Just return text otherwise
+		return text;
+	}
+}
+
+function eecs_183_text(to_append) {
+	var text = "<p class=\"white text-body-raleway center\" style=\"opacity: 0\"><b><span class=\"white\">Multidisciplinary Design Program</span></b> with <b>MDA Information Systems LLC</b><br>Ypsilanti, MI | Winter '16 to Fall '16</p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Design software to <span class=\"green\"><b>universally emulate financial exchanges</b></span> for testing and benchmark purposes, specifically Miami's MIAX and Chicago's CME Exchanges.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Create functional and latency tests for the emulator, then graph and statistically analyze using the <span class=\"green\"><b>R graphing language</b></span>.</p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Program heavily in network computing using the <b><span class=\"green\">Boost.Asio library</span></b> to simulate TCP/UDP connections for the emulator.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext\"><span class=\"tab\"><b><span class=\"green\">></span></b> Work in <b><span class=\"green\">agile development environment</span></b> entailing daily stand-upsand bi-weekly retrospectives.</span></p>";
+
+	// Only append text if boolean is true
+	if (to_append)
+	{ // Append text, don't return
+		$('#experience-183-div').append(text);
 	}
 	else
 	{ // Just return text otherwise
