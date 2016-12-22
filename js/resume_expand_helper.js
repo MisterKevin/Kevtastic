@@ -19,7 +19,8 @@ function calculate_new_height(curr_map_index)
 function expand_curr_div(newHeight, curr_map_index)
 {
 	$(experience_ids[curr_map_index]).velocity({
-		height: newHeight
+		height: newHeight,
+		backgroundColor: "#000000"
 	}, 500, function() {
 		// Create wrapper, substring(1) because experience_div has "#" in front of it.
 		$(experience_ids[curr_map_index]).append("<div id=\"" + experience_divs[curr_map_index].substring(1) + "\">");
@@ -43,8 +44,7 @@ function expand_curr_div(newHeight, curr_map_index)
 	});
 }
 
-
-// Repositions the clicked-on text to top of div
+// Repositions the clicked-on text to top of div.
 function reposition_curr_text_on_expand(curr_map_index)
 {
 	var text_offset = $(experience_ids[curr_map_index]).offset().top;

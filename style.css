@@ -392,7 +392,7 @@ a:hover {
 	height: 85%;
 }
 
-#experience-wolverine-trading, #experience-mdp, #experience-ak, #experience-183 {
+#experience-wt, #experience-mdp, #experience-ak, #experience-183 {
 	z-index: 1;
 	position: relative;
 	display: flex;
@@ -400,7 +400,28 @@ a:hover {
 	background-color: #0d0d0d;
 }
 
-#experience-wolverine-trading:after {
+#experience-wt {
+	border: 0.5px solid #80b418;
+}
+
+#experience-mdp {
+	border: 0.5px solid #16b1d0;
+}
+
+#experience-ak {
+	border: 0.5px solid #e00656;
+}
+
+#experience-183 {
+	border: 0.5px solid #e37a02;
+}
+
+
+#experience-wt:hover, #experience-mdp:hover, #experience-ak:hover, #experience-183:hover {
+	cursor: pointer;
+}
+
+#experience-wt:after {
 	content: ' ';
 	background-image: url(images/wolverine-trading.png);
 	background-size: 100% 100%;

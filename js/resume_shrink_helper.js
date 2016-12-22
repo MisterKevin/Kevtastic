@@ -16,20 +16,27 @@ function remove_curr_text_on_shrink(experience_div)
 }
 
 // Shrink current clicked div
-function shrink_curr_div(curr_map_index)
+function shrink_curr_div(curr_opened_div, curr_map_index)
 {
-	$(experience_ids[curr_map_index]).velocity({
-		height: "21%"
+	$(experience_ids[curr_opened_div]).velocity({
+		height: "21%",
+		backgroundColor: "#0d0d0d"
 	}, 500, function() {
 		done = true;
+		current_opened_div = -1;	// Reset global.
+		if (curr_opened_div != curr_map_index)
+		{
+			// Need to open new div
+			show_experience(curr_map_index);
+		}
 	});
 }
 
 // Change other divs (expand them) when shrinking main current div
-function morph_other_divs_on_shrink(curr_map_index)
+function morph_other_divs_on_shrink(current_opened_div)
 {
 	$.each(experience_ids, function(index, value) {
-		if (index != curr_map_index)
+		if (index != current_opened_div)
 		{ // Current id is already extended
 			$(value).velocity({
 				height: "21%"
@@ -39,7 +46,7 @@ function morph_other_divs_on_shrink(curr_map_index)
 }
 
 // Repositions the other experience-divs in reaction to a div click to shrink
-function reposition_all_text_on_shrink(newHeight, curr_map_index)
+function reposition_all_text_on_shrink(newHeight, current_opened_div)
 {
 	var unexpanded_div_height = parseInt($('#experience-wrapper').height()) * .21 + parseInt($('.experience').css("margin-top")); // 21% height + marginTop
 	var top_offset = $(experience_ids[0]).offset().top;	// To calculate mid value, first find top offset. Start at 0th div top.

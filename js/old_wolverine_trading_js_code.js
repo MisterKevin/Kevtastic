@@ -17,7 +17,7 @@
 	// 	});
 
 	// 	// Animation for shinking div
-	// 	$('#experience-wolverine-trading').velocity({
+	// 	$('#experience-wt').velocity({
 	// 		height: oldHeight
 	// 	}, 500, function() {
 	// 		done = true;
@@ -25,7 +25,7 @@
 
 	// 	// Animation for moving wt-text
 	// 	$('#experience-wt-text').velocity({
-	// 		top: "+=" + (((parseInt($('#experience-wolverine-trading').css('top')) + oldHeight) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2))
+	// 		top: "+=" + (((parseInt($('#experience-wt').css('top')) + oldHeight) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2))
 	// 	}, 500);
 	// }
 	// else 
@@ -33,17 +33,17 @@
 	// 	experience_wolverine_trading_bool = true;
 
 	// 	newHTML = $("<div id=\"temp_sizer\" style=\"position : relative;\">" + wolverine_trading_info_text() + "</div>").appendTo('#experience-wrapper');
-	// 	oldHeight = $('#experience-wolverine-trading').height();
+	// 	oldHeight = $('#experience-wt').height();
 	// 	var newHeight = newHTML.height() + 10; // Padding
 
 	// 	// Delete temp div
 	// 	$('#temp_sizer').remove();
 
-	// 	$('#experience-wolverine-trading').velocity({
+	// 	$('#experience-wt').velocity({
 	// 		height: newHeight
 	// 	}, 500, function() {
 	// 		// Create wrapper
-	// 		$('#experience-wolverine-trading').append("<div id=\"wolverine-trading-div\">");
+	// 		$('#experience-wt').append("<div id=\"wolverine-trading-div\">");
 
 	// 		// Set opacity to zero
 	// 		$('#wolverine-trading-div').css('opacity', '0');
@@ -53,7 +53,7 @@
 	// 		wolverine_trading_info();
 
 	// 		// End div
-	// 		$('#experience-wolverine-trading').append("</div>");
+	// 		$('#experience-wt').append("</div>");
 
 	// 		// Animation to show text
 	// 		$('#wolverine-trading-div').velocity({
@@ -64,7 +64,7 @@
 	// 	});
 
 	// 	$('#experience-wt-text').velocity({
-	// 		top: $('#experience-wolverine-trading').offset().top
+	// 		top: $('#experience-wt').offset().top
 	// 	}, 500, function() {
 	// 		console.log("DONE");
 	// 	});
