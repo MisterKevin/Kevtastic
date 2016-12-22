@@ -412,7 +412,7 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.165;
+	opacity: 0.135;
 }
 
 #experience-mdp:after {
@@ -427,7 +427,7 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.165;
+	opacity: 0.135;
 }
 
 #experience-ak:after {
@@ -442,7 +442,7 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.165;
+	opacity: 0.135;
 }
 
 #experience-183:after {
@@ -457,11 +457,12 @@ a:hover {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.165;
+	opacity: 0.135;
 }
 
 #experience-wt-text, #experience-mdp-text, #experience-ak-text, #experience-183-text {
 	position: fixed;
+	z-index: 100;
 }
 
 .resume-left-container {
