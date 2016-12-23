@@ -83,6 +83,11 @@ a:hover {
 }
 
 #col-9 {
+	/* Initialization */
+	opacity: 0;
+	left: 10%;
+
+	/* Regular */
 	z-index: 50;
 	height: 100%;
 	display: flex;
@@ -484,6 +489,7 @@ a:hover {
 #experience-wt-text, #experience-mdp-text, #experience-ak-text, #experience-183-text {
 	position: fixed;
 	z-index: 100;
+	white-space: nowrap;
 }
 
 .resume-left-container {

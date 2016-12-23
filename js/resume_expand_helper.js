@@ -96,11 +96,11 @@ function reposition_other_text_on_expand(newHeight, curr_map_index)
 function morph_other_divs_on_expand(curr_map_index)
 {
 	$.each(experience_ids, function(index, value) {
-			if (index != curr_map_index)
-			{ // Don't want to shrink the current id
-				$(value).velocity({
-					height: "15%"
-				}, 500);
-			}
+		if (index != curr_map_index)
+		{ // Don't want to shrink the current id
+			$(value).velocity({
+				height: "15%"
+			}, 500);
+		}
 	});
 }

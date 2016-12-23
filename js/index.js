@@ -3,33 +3,21 @@ var state = "";
 
 $(document).ready(function() {
 	// ReplaceState
-	var stateObject = { url: "home" };
-	history.replaceState(stateObject, "", "");
-
-	// $('#col-9').css('opacity', '0');
-	// $('#col-9').css('left', '+10%');
-	$('#experience-wt-text').css('top', $('#experience-wt').offset().top + (((parseInt($('#experience-wt').css('top')) + parseInt($('#experience-wt').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
-	$('#experience-wt-text').css('left', $('#experience-wt').offset().left + (((parseInt($('#experience-wt').css('left')) + parseInt($('#experience-wt').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
-	$('#experience-mdp-text').css('top', $('#experience-mdp').offset().top + (((parseInt($('#experience-mdp').css('top')) + parseInt($('#experience-mdp').css('height'))) / 2) - (parseInt($('#experience-mdp-text').css('height')) / 2)));
-	$('#experience-mdp-text').css('left', $('#experience-mdp').offset().left + (((parseInt($('#experience-mdp').css('left')) + parseInt($('#experience-mdp').css('width'))) / 2) - (parseInt($('#experience-mdp-text').css('width')) / 2)));
-	$('#experience-ak-text').css('top', $('#experience-ak').offset().top + (((parseInt($('#experience-ak').css('top')) + parseInt($('#experience-ak').css('height'))) / 2) - (parseInt($('#experience-ak-text').css('height')) / 2)));
-	$('#experience-ak-text').css('left', $('#experience-ak').offset().left + (((parseInt($('#experience-ak').css('left')) + parseInt($('#experience-ak').css('width'))) / 2) - (parseInt($('#experience-ak-text').css('width')) / 2)));
-	$('#experience-183-text').css('top', $('#experience-183').offset().top + (((parseInt($('#experience-183').css('top')) + parseInt($('#experience-183').css('height'))) / 2) - (parseInt($('#experience-183-text').css('height')) / 2)));
-	$('#experience-183-text').css('left', $('#experience-183').offset().left + (((parseInt($('#experience-183').css('left')) + parseInt($('#experience-183').css('width'))) / 2) - (parseInt($('#experience-183-text').css('width')) / 2)));
+	history.replaceState({ url: "home" }, "", "");
 });
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
 {
-	state = "resume"; // For now
+	state = "home";
 	$(".front_door_image").fadeOut(function() {
-		// // Write home-info
-		// home_info();
+		// Write home-info
+		home_info();
 
-		// // Write information
-		// $('#col-9').velocity({
-		// 	opacity: 1,
-		// 	"left": "-=10%"
-		// }, 500);
+		// Write information
+		$('#col-9').velocity({
+			opacity: 1,
+			"left": "-=10%"
+		}, 500);
 	});
 });
 
@@ -51,15 +39,8 @@ $(document).delegate('.portrait-caption', 'click touchstart', function(event)
 	update_screen("home", home_info);
 });
 
-function update_screen(url, func)
+function update_screen(url, display_new_text_func)
 {
-	// Update History
-	if (history.state.url != "home" || url != "home")
-	{
-		var stateObject = { url: url };
-		history.pushState(stateObject, "", "");
-	}
-	
 	// Fade out old material and show new
 	$('#col-9').velocity({
 		opacity: 0,
@@ -67,13 +48,26 @@ function update_screen(url, func)
 	}, 500, function() {
 		// Animation complete
 		$('#col-9').empty();
-		func();
+
+		display_new_text_func();
 
 		$('#col-9').velocity({
 			opacity: 1,
 			"left": "-=10%"
 		}, 500);
+
+		// In addition, fade in fixed text from resume
+		if (url == "resume")
+			fade_in_resume();
 	});
+
+	// In addition, fade out fixed text from resume
+	if (history.state.url == "resume")
+		fade_out_resume();
+
+	// Update History
+	if (history.state.url != "home" || url != "home")
+		history.pushState({ url: url }, "", "");
 }
 
 window.onpopstate = function(event)
@@ -97,6 +91,9 @@ window.onpopstate = function(event)
 		else if (event.state.url == "resume")
 		{
 			resume_info();
+
+			// Fade in fixed text
+			fade_in_resume();
 		}
 
 		$('#col-9').velocity({
@@ -104,6 +101,13 @@ window.onpopstate = function(event)
 			"left": "-=10%"
 		}, 500);
 	});
+
+	// In addition, fade out fixed text from resume
+	if (state == "resume")
+		fade_out_resume();
+
+	// Update state
+	state = event.state.url;
 }
 
 $(window).resize(function() {
