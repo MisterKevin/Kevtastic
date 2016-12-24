@@ -20,9 +20,9 @@ function wt_text(to_append) {
 
 function mdp_text(to_append) {
 	var text = "<p class=\"white text-body-raleway center\" style=\"opacity: 0\"><b><span class=\"white\">Multidisciplinary Design Program</span></b> with <b>MDA Information Systems</b><br>Ypsilanti, MI | Winter '16 - Fall '16</p>\
-							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Research, design, and implement a <span class=\"cyan\"><b>polar bear camera-based detection system</b></span> that ensures compliance with stakeholder's requirements.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Research, design, and implement a <span class=\"cyan\"><b>polar bear camera-based detection system</b></span> to protect workers in Arctic environments.</span></p>\
 							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Program a <span class=\"cyan\"><b>testing harness</b></span> to aid in the testing of the detection module's bounding box accuracy.</p>\
-							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Research and utilize <span class=\"cyan\"><b>computer vision</b></span> to calculate speed, distance, and bearing (SBD) from bounding box movements. Then, design and implement a radar-like GUI system using <span class=\"cyan\"><b>OpenGL</b></span> to visually display the SBD.</span></p>\
+							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Research and utilize <span class=\"cyan\"><b>computer vision</b></span> to calculate speed, distance, and bearing (SBD) from bounding box movements. Then, design and implement a graphical interface using <span class=\"cyan\"><b>OpenGL</b></span> to display SBD.</span></p>\
 							<p class=\"white text-body-raleway-subtext experience-subtext justified\"><span class=\"tab\"><b><span class=\"cyan\">></span></b> Supply weekly <span class=\"cyan\"><b>written summaries and agendas</b></span> to the client, MDA Information Systems.</span></p>";
 
 	// Only append text if boolean is true
