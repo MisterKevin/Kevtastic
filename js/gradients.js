@@ -2,7 +2,7 @@
 
 var background_gradient_angle = 45;
 var gradient_pong = false;
-var gradient_colors = "#272822, #272822, #272822, #371d00, #101603, #031417, #19010a, #371d00, #272822";
+var gradient_colors = "#272822, #272822, #272822, #1a0e00, #101603, #06272d, #19010a, #371d00, #272822";
 
 // Initializes the beginning gradient
 function initialize_gradient()
@@ -15,7 +15,6 @@ function initialize_gradient()
 // Updates angle
 function update_gradient()
 {
-	console.log("touched");
 	$('body').css('background', 'linear-gradient(' + background_gradient_angle + 'deg, ' + gradient_colors + ')');
 	$('body').css('background-size', '1800% 1800%');
 
@@ -33,11 +32,11 @@ function update_gradient()
 // Reverts back to gray, called when any link is clicked besides home.
 function revert_gradient()
 {
-	gradient_colors = "#272822, #272822"; 
+	// gradient_colors = "#272822, #272822"; 
 }
 
 // Called upon returning back to home page
 function start_gradient()
 {
-	gradient_colors = "#272822, #101603, #031417, #19010a, #321b01, #272822";
+	// gradient_colors = "#272822, #101603, #031417, #19010a, #321b01, #272822";
 }

@@ -22,7 +22,7 @@ function about_info()
 					\
 					<p class=\"text-body white word-wrap justified\"><span class=\"orange border-bottom-orange\">Extracurriculars</span>: I am currently an Instructional Aide for <span class=\"green\">EECS 183: \"Elementary Programming Concepts\"</span> at this university and am a board member on the <span class=\"green\">College of Engineering's Undergraduate Student Advisory Board</span>, helping represent CS-LSA for all undergraduates. Outside of school, I have to admit that video games are pretty neat! I'm an avid gamer in my free time.</p><br>\
 					\
-					<p class=\"text-body white word-wrap justified\">Thank you for visiting my website, and I hope you have a wonderful time exploring here. :)</p><br><br><p class=\"text-body white word-wrap right\">Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
+					<p class=\"text-body white word-wrap justified\">Thank you for visiting my website, and I hope you have a wonderful time exploring here. :)</p><br><p class=\"text-body white word-wrap right\">Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
 					</div></div>");
 
 	// Closing div

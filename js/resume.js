@@ -6,6 +6,7 @@ var experience_divs = [ "#experience-wt-div", "#experience-mdp-div", "#experienc
 var experience_ids = [ "#experience-wt", "#experience-mdp", "#experience-ak", "#experience-183" ];
 var experience_text_ids = [ "#experience-wt-text", "#experience-mdp-text", "#experience-ak-text", "#experience-183-text" ];
 var done = true;
+var current_top = 0;
 
 $(document).delegate('#experience-wt', 'click touchstart', function(event)
 {
@@ -225,4 +226,18 @@ function fade_in_resume()
 	// Initialize globals
 	done = true;
 	current_opened_div = -1;
+}
+
+// This function aids in keeping the text mobile during scrolling
+function resume_scroll()
+{
+	// Calculate difference in scroll from before to after
+	var diff_in_scroll = $(experience_ids[0]).offset().top - current_top;
+	
+	// Update current_top
+	current_top = $(experience_ids[0]).offset().top;
+	
+	$.each(experience_text_ids, function(index, value) {
+		$(value).css('top', '+=' + diff_in_scroll);
+	});
 }

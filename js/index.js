@@ -9,10 +9,6 @@ var gradient_update_interval_ID = 0;
 $(document).ready(function() {
 	// ReplaceState
 	history.replaceState({ url: "home" }, "", "");
-
-	$(window).scroll(function(){
-		console.log("!?!?!");
-	});
 });
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
@@ -76,6 +72,7 @@ function update_screen(url, display_new_text_func)
 	}, global_animation_time, global_ease_out, function() {
 		// Animation complete
 		$('#col-9').empty();
+
 		display_new_text_func();
 
 		$('#col-9').velocity({
@@ -87,7 +84,15 @@ function update_screen(url, display_new_text_func)
 
 		// In addition, fade in fixed text from resume
 		if (url == "resume")
+			// Fade in text
 			fade_in_resume();
+
+			// Keep track of current height of a div
+			current_top = $(experience_ids[0]).offset().top;
+			
+			// Fix scrolling
+			$('#info').scroll(resume_scroll);
+
 	});
 
 	// In addition, fade out fixed text from resume
