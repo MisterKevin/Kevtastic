@@ -1,5 +1,10 @@
 // This .js is for all things on the intro-page and home page, and general navigation.
 var state = "";
+var animation_running = false;
+var global_animation_time = 600;
+var global_ease_in = "easeOutSine";
+var global_ease_out = "easeInSine";
+var gradient_update_interval_ID = 0;
 
 $(document).ready(function() {
 	// ReplaceState
@@ -8,44 +13,68 @@ $(document).ready(function() {
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
 {
-	state = "home";
-	$(".front_door_image").fadeOut(function() {
-		// Write home-info
-		home_info();
+	// Prevent multiple clicks on front door image
+	if (!animation_running)
+	{
+		animation_running = true;
+		state = "home";
+		$(".front_door_image").fadeOut(function() {
+			// Begin displaying gradient
+			update_gradient();
+			gradient_update_interval_ID = setInterval(update_gradient, 500);
+			initialize_gradient();
 
-		// Write information
-		$('#col-9').velocity({
-			opacity: 1,
-			"left": "-=10%"
-		}, 500);
-	});
+			// Write home-info
+			home_info();
+
+			// Write information
+			$('#col-9').velocity({
+				opacity: 1,
+				"left": "-=10%"
+			}, global_animation_time, global_ease_in, function() {
+				animation_running = false;
+			});
+		});
+	}
 });
 
 $(document).delegate('#about', 'click touchstart', function(event)
 {
-	state = "about";
-	update_screen("about", about_info);
+	if (!animation_running)
+		update_screen("about", about_info);
 });
 
 $(document).delegate('#resume', 'click touchstart', function(event)
 {
-	state = "resume";
-	update_screen("resume", resume_info);
+	if (!animation_running)
+		update_screen("resume", resume_info);
 });
 
 $(document).delegate('.portrait-caption', 'click touchstart', function(event)
 {
-	state = "home";
-	update_screen("home", home_info);
+	if (!animation_running)
+		update_screen("home", home_info);
 });
 
 function update_screen(url, display_new_text_func)
 {
+	// Animation running
+	animation_running = true;
+
+	// Cancel gradient if not home, restart if it is
+	// if (url != 'home')
+	// 	revert_gradient();
+	// else
+	// 	start_gradient();
+
+	// Update state
+	state = url;
+
 	// Fade out old material and show new
 	$('#col-9').velocity({
 		opacity: 0,
 		"left": "+=10%"
-	}, 500, function() {
+	}, global_animation_time, global_ease_out, function() {
 		// Animation complete
 		$('#col-9').empty();
 
@@ -54,7 +83,9 @@ function update_screen(url, display_new_text_func)
 		$('#col-9').velocity({
 			opacity: 1,
 			"left": "-=10%"
-		}, 500);
+		}, global_animation_time, global_ease_in, function() {
+			animation_running = false;
+		});
 
 		// In addition, fade in fixed text from resume
 		if (url == "resume")
@@ -76,7 +107,7 @@ window.onpopstate = function(event)
 	$('#col-9').velocity({
 		opacity: 0,
 		"left": "+=10%"
-	}, 500, function() {
+	}, global_animation_time, global_ease_out, function() {
 		// Animation complete
 		$('#col-9').empty();
 		
@@ -99,7 +130,7 @@ window.onpopstate = function(event)
 		$('#col-9').velocity({
 			opacity: 1,
 			"left": "-=10%"
-		}, 500);
+		}, global_animation_time, global_ease_in);
 	});
 
 	// In addition, fade out fixed text from resume

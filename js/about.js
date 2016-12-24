@@ -8,7 +8,9 @@ function about_info()
 	// Body
 	$('#info').append("<p class=\"text-header white thin-underline-orange center\" id=\"about_header\">About Me</p>\
 					\
-					<div class=\"bio-wrapper-center-about-body\" id=\"info\">\
+					<div class=\"bio-wrapper-center-about-body\">\
+					\
+					<div class=\"bio-wrapper-center-about-body-inner\">\
 					\
 					<p class=\"text-body white word-wrap justified\">Hi, I'm <span class=\"cyan\">Kevin Lee</span>!</p><br>\
 					\
@@ -21,7 +23,7 @@ function about_info()
 					<p class=\"text-body white word-wrap justified\"><span class=\"orange border-bottom-orange\">Extracurriculars</span>: I am currently an Instructional Aide for <span class=\"green\">EECS 183: \"Elementary Programming Concepts\"</span> at this university and am a board member on the <span class=\"green\">College of Engineering's Undergraduate Student Advisory Board</span>, helping represent CS-LSA for all undergraduates. Outside of school, I have to admit that video games are pretty neat! I'm an avid gamer in my free time.</p><br>\
 					\
 					<p class=\"text-body white word-wrap justified\">Thank you for visiting my website, and I hope you have a wonderful time exploring here. :)</p><br><br><p class=\"text-body white word-wrap right\">Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
-					</div>");
+					</div></div>");
 
 	// Closing div
 	$('#col-9').append("</div>");

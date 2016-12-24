@@ -205,7 +205,7 @@ function fade_out_resume()
 	$.each(experience_text_ids, function(index, value) {
 		$(value).velocity({
 			"left": "+=10%"
-		}, 500);
+		}, global_animation_time, global_ease_out);
 	});
 
 	// Reset all globals
@@ -219,7 +219,7 @@ function fade_in_resume()
 	$.each(experience_text_ids, function(index, value) {
 		$(value).velocity({
 			"left": "-=10%"
-		}, 500);
+		}, global_animation_time, global_ease_in);
 	});
 
 	// Initialize globals

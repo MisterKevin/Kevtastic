@@ -3,13 +3,15 @@
  * the user clicks on an experience div in order to *shrink* it.
  */
 
+ var shrink_ease_out = "easeInQuad";
+
 // Remove current text from the clicked-on div
 // [CURRENT UNUSED]
 function remove_curr_text_on_shrink(experience_div) 
 {
 	$(experience_div).velocity({
 		opacity: 0
-	}, 300, function() {
+	}, 300, shrink_ease_out, function() {
 		// Animation complete, now shrink and delete
 		$(experience_div).remove();
 	});
@@ -21,7 +23,7 @@ function shrink_curr_div(curr_opened_div, curr_map_index)
 	$(experience_ids[curr_opened_div]).velocity({
 		height: "21%",
 		backgroundColor: "#0d0d0d"
-	}, 500, function() {
+	}, global_animation_time, shrink_ease_out, function() {
 		done = true;
 		current_opened_div = -1;	// Reset global.
 		if (curr_opened_div != curr_map_index)
@@ -40,7 +42,7 @@ function morph_other_divs_on_shrink(current_opened_div)
 		{ // Current id is already extended
 			$(value).velocity({
 				height: "21%"
-			}, 500);
+			}, global_animation_time, shrink_ease_out);
 		}
 	});
 }
@@ -60,6 +62,6 @@ function reposition_all_text_on_shrink(newHeight, current_opened_div)
 
 		$(value).velocity({
 			top: mid_val
-		}, 500);
+		}, global_animation_time, shrink_ease_out);
 	});
 }

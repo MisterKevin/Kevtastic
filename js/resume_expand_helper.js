@@ -3,6 +3,8 @@
  * the user clicks on an experience div in order to *expand* it.
  */
 
+var expand_ease_in = "easeOutQuad";
+
 // Calculate height of clicked-on div
 function calculate_new_height(curr_map_index) 
 {
@@ -21,7 +23,7 @@ function expand_curr_div(newHeight, curr_map_index)
 	$(experience_ids[curr_map_index]).velocity({
 		height: newHeight,
 		backgroundColor: "#000000"
-	}, 500, function() {
+	}, global_animation_time, expand_ease_in, function() {
 		// Create wrapper, substring(1) because experience_div has "#" in front of it.
 		$(experience_ids[curr_map_index]).append("<div id=\"" + experience_divs[curr_map_index].substring(1) + "\">");
 
@@ -38,7 +40,7 @@ function expand_curr_div(newHeight, curr_map_index)
 		// Animation to show text
 		$(experience_divs[curr_map_index]).velocity({
 			opacity: 1
-		}, 300, function() {
+		}, 300, expand_ease_in, function() {
 			done = true;
 		});
 	});
@@ -55,7 +57,7 @@ function reposition_curr_text_on_expand(curr_map_index)
 
 	$(experience_text_ids[curr_map_index]).velocity({
 		top: text_offset
-	}, 500);
+	}, global_animation_time, expand_ease_in);
 }
 
 // Repositions the other experience-divs in reaction to a div click to expand
@@ -87,7 +89,7 @@ function reposition_other_text_on_expand(newHeight, curr_map_index)
 
 			$(value).velocity({
 				top: mid_val
-			}, 500);
+			}, global_animation_time, expand_ease_in);
 		}
 	});
 }
@@ -100,7 +102,7 @@ function morph_other_divs_on_expand(curr_map_index)
 		{ // Don't want to shrink the current id
 			$(value).velocity({
 				height: "15%"
-			}, 500);
+			}, global_animation_time, expand_ease_in);
 		}
 	});
 }
