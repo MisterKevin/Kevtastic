@@ -2,7 +2,7 @@
 
 var background_gradient_angle = 45;
 var gradient_pong = false;
-var gradient_colors = "#272822, #272822, #272822, #070316, #101603, #031417, #19010a, #321b01, #272822";
+var gradient_colors = "#272822, #272822, #272822, #371d00, #101603, #031417, #19010a, #371d00, #272822";
 
 // Initializes the beginning gradient
 function initialize_gradient()

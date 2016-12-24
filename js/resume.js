@@ -7,7 +7,6 @@ var experience_ids = [ "#experience-wt", "#experience-mdp", "#experience-ak", "#
 var experience_text_ids = [ "#experience-wt-text", "#experience-mdp-text", "#experience-ak-text", "#experience-183-text" ];
 var done = true;
 
-
 $(document).delegate('#experience-wt', 'click touchstart', function(event)
 {
 	show_experience(0);
@@ -202,6 +201,7 @@ function resume_info()
 // This function fades out the resume fixed text, used in index.js
 function fade_out_resume()
 {
+	old_pos_resume = $(experience_text_ids[0]).offset().right; // Saving just one experience div is enough
 	$.each(experience_text_ids, function(index, value) {
 		$(value).velocity({
 			"left": "+=10%"

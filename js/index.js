@@ -9,6 +9,10 @@ var gradient_update_interval_ID = 0;
 $(document).ready(function() {
 	// ReplaceState
 	history.replaceState({ url: "home" }, "", "");
+
+	$(window).scroll(function(){
+		console.log("!?!?!");
+	});
 });
 
 $(document).delegate('.front_door_image', 'click touchstart', function(event)
@@ -61,28 +65,22 @@ function update_screen(url, display_new_text_func)
 	// Animation running
 	animation_running = true;
 
-	// Cancel gradient if not home, restart if it is
-	// if (url != 'home')
-	// 	revert_gradient();
-	// else
-	// 	start_gradient();
-
 	// Update state
 	state = url;
 
 	// Fade out old material and show new
+	var old_pos = $('#col-9').offset().right;
 	$('#col-9').velocity({
 		opacity: 0,
 		"left": "+=10%"
 	}, global_animation_time, global_ease_out, function() {
 		// Animation complete
 		$('#col-9').empty();
-
 		display_new_text_func();
 
 		$('#col-9').velocity({
 			opacity: 1,
-			"left": "-=10%"
+			"left": old_pos
 		}, global_animation_time, global_ease_in, function() {
 			animation_running = false;
 		});
@@ -104,6 +102,7 @@ function update_screen(url, display_new_text_func)
 window.onpopstate = function(event)
 {
 	// Fade out old material and show new
+	var old_pos = $('#col-9').offset().right;
 	$('#col-9').velocity({
 		opacity: 0,
 		"left": "+=10%"
@@ -129,7 +128,7 @@ window.onpopstate = function(event)
 
 		$('#col-9').velocity({
 			opacity: 1,
-			"left": "-=10%"
+			"left": old_pos
 		}, global_animation_time, global_ease_in);
 	});
 
