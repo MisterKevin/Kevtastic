@@ -5,6 +5,9 @@ var global_animation_time = 600;
 var global_ease_in = "easeOutSine";
 var global_ease_out = "easeInSine";
 var gradient_update_interval_ID = 0;
+var quad_ids = [ "#q_about", "#q_resume", "#q_contact", "#q_other" ];
+var width_d = "48%";
+var height_d = "48%";
 
 $(document).ready(function() {
 	// ReplaceState
@@ -20,12 +23,12 @@ $(document).delegate('.front_door_image', 'click touchstart', function(event)
 		state = "home";
 		$(".front_door_image").fadeOut(function() {
 			// Begin displaying gradient
-			update_gradient();
-			gradient_update_interval_ID = setInterval(update_gradient, 500);
-			initialize_gradient();
+			// update_gradient();
+			// gradient_update_interval_ID = setInterval(update_gradient, 500);
+			// initialize_gradient();
 
 			// Write home-info
-			home_info();
+			// home_info();
 
 			// Write information
 			$('#col-9').velocity({
@@ -38,19 +41,89 @@ $(document).delegate('.front_door_image', 'click touchstart', function(event)
 	}
 });
 
-$(document).delegate('#about', 'click touchstart', function(event)
+/* Hover */
+$(document).delegate('.quad', 'mouseenter', function(event)
+{
+	var newWidth;
+	var newHeight;
+	var id = this.id;
+	var div_index = 0;
+	var delta = 15;
+
+	// Find index
+	$.each(quad_ids, function(index, value) {
+		if (value.substr(1) === id)
+			div_index = index;
+	});
+
+	$.each(quad_ids, function(index, value) {
+		console.log(id + " + " + value);
+		if (value.substr(1) === id) // substr(1) as value has "#" in front
+		{
+			newWidth = (parseInt(height_d) + delta) + "%";
+			newHeight = (parseInt(width_d) + delta) + "%";
+			console.log(newWidth + " + " + newHeight);
+		}
+		else
+		{
+			// Find placement of other boxes.
+			switch (div_index + index)
+			{
+				case 1: // Tall
+					newWidth = (parseInt(width_d) - delta) + "%";
+					newHeight = (parseInt(height_d) + delta) + "%";
+					break;
+				case 2: // Wide
+					newWidth = (parseInt(width_d) + delta) + "%";
+					newHeight = (parseInt(height_d) - delta) + "%";
+					break;
+				case 3: // Short on all sides
+					newWidth = (parseInt(width_d) - delta) + "%";
+					newHeight = (parseInt(height_d) - delta) + "%";
+					break;
+				case 4: // Wide
+					newWidth = (parseInt(width_d) + delta) + "%";
+					newHeight = (parseInt(height_d) - delta) + "%";
+					break;
+				case 5: // Tall
+					newWidth = (parseInt(width_d) - delta) + "%";
+					newHeight = (parseInt(height_d) + delta) + "%";
+					break;
+				default:
+					console.log("??? Should not have entered.");
+					break;
+			}
+		}
+
+		$(value).velocity({
+			"width": newWidth,
+			"height": newHeight
+		}, 500);
+	});
+});
+
+
+
+/* Click */
+$(document).delegate('#q_about', 'click touchstart', function(event)
 {
 	if (!animation_running)
 		update_screen("about", about_info);
 });
 
-$(document).delegate('#resume', 'click touchstart', function(event)
+$(document).delegate('#q_resume', 'click touchstart', function(event)
 {
 	if (!animation_running)
 		update_screen("resume", resume_info);
 });
 
 $(document).delegate('.portrait-caption', 'click touchstart', function(event)
+{
+	if (!animation_running)
+		update_screen("home", home_info);
+});
+
+$(document).delegate('.portrait', 'click touchstart', function(event)
 {
 	if (!animation_running)
 		update_screen("home", home_info);
