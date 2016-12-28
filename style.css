@@ -555,16 +555,16 @@ a:hover {
 	margin: 0;
 	margin-top: 1%;
 	width: 100%;
-	height: 80%;
+	height: 83%;
 	overflow-x: hidden;
 }
 
 .quad {
 	padding: 0;
 	margin: .25%;
-	width: 48%;
-	height: 48%;
-	overflow-x: hidden;
+	width: 49%;
+	height: 49%;
+	overflow: hidden;
 	float: left;
 
 	text-align: center;
@@ -574,27 +574,15 @@ a:hover {
 }
 
 #q_about:hover, #q_resume:hover, #q_contact:hover, #q_other:hover {
-	background: rgba(50, 50, 50, .5);
 	cursor: pointer;
 }
 
-#q_about {
-	background: rgba(20, 20, 20, .5);
-
-	border: 2px solid #F92672;
+#q_about, #q_resume, #q_contact, #q_other {
+	opacity: .6;
+	border: 2px solid black;
+	background: rgba(20, 20, 20, .6);
 }
 
-#q_resume {
-	background: rgba(20, 20, 20, .5);
-	border: 2px solid #66D9EF;
-}
-
-#q_contact {
-	background: rgba(20, 20, 20, .5);
-	border: 2px solid #A6E22E;
-}
-
-#q_other {
-	background: rgba(20, 20, 20, .5);
-	border: 2px solid #FD971F;
+#pdf:hover {
+	text-decoration: underline;
 }

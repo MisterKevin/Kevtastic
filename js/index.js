@@ -6,8 +6,7 @@ var global_ease_in = "easeOutSine";
 var global_ease_out = "easeInSine";
 var gradient_update_interval_ID = 0;
 var quad_ids = [ "#q_about", "#q_resume", "#q_contact", "#q_other" ];
-var width_d = "48%";
-var height_d = "48%";
+var pdf_clicked = false;
 
 $(document).ready(function() {
 	// ReplaceState
@@ -28,7 +27,10 @@ $(document).delegate('.front_door_image', 'click touchstart', function(event)
 			// initialize_gradient();
 
 			// Write home-info
-			// home_info();
+			home_info();
+
+			// Generate home's quad colors
+			quad_color_start();
 
 			// Write information
 			$('#col-9').velocity({
@@ -41,69 +43,6 @@ $(document).delegate('.front_door_image', 'click touchstart', function(event)
 	}
 });
 
-/* Hover */
-$(document).delegate('.quad', 'mouseenter', function(event)
-{
-	var newWidth;
-	var newHeight;
-	var id = this.id;
-	var div_index = 0;
-	var delta = 15;
-
-	// Find index
-	$.each(quad_ids, function(index, value) {
-		if (value.substr(1) === id)
-			div_index = index;
-	});
-
-	$.each(quad_ids, function(index, value) {
-		console.log(id + " + " + value);
-		if (value.substr(1) === id) // substr(1) as value has "#" in front
-		{
-			newWidth = (parseInt(height_d) + delta) + "%";
-			newHeight = (parseInt(width_d) + delta) + "%";
-			console.log(newWidth + " + " + newHeight);
-		}
-		else
-		{
-			// Find placement of other boxes.
-			switch (div_index + index)
-			{
-				case 1: // Tall
-					newWidth = (parseInt(width_d) - delta) + "%";
-					newHeight = (parseInt(height_d) + delta) + "%";
-					break;
-				case 2: // Wide
-					newWidth = (parseInt(width_d) + delta) + "%";
-					newHeight = (parseInt(height_d) - delta) + "%";
-					break;
-				case 3: // Short on all sides
-					newWidth = (parseInt(width_d) - delta) + "%";
-					newHeight = (parseInt(height_d) - delta) + "%";
-					break;
-				case 4: // Wide
-					newWidth = (parseInt(width_d) + delta) + "%";
-					newHeight = (parseInt(height_d) - delta) + "%";
-					break;
-				case 5: // Tall
-					newWidth = (parseInt(width_d) - delta) + "%";
-					newHeight = (parseInt(height_d) + delta) + "%";
-					break;
-				default:
-					console.log("??? Should not have entered.");
-					break;
-			}
-		}
-
-		$(value).velocity({
-			"width": newWidth,
-			"height": newHeight
-		}, 500);
-	});
-});
-
-
-
 /* Click */
 $(document).delegate('#q_about', 'click touchstart', function(event)
 {
@@ -113,8 +52,11 @@ $(document).delegate('#q_about', 'click touchstart', function(event)
 
 $(document).delegate('#q_resume', 'click touchstart', function(event)
 {
-	if (!animation_running)
+	console.log("resume");
+	if (!animation_running && !pdf_clicked)
 		update_screen("resume", resume_info);
+	else
+		pdf_clicked = false;
 });
 
 $(document).delegate('.portrait-caption', 'click touchstart', function(event)
@@ -127,6 +69,12 @@ $(document).delegate('.portrait', 'click touchstart', function(event)
 {
 	if (!animation_running)
 		update_screen("home", home_info);
+});
+
+$(document).delegate('#pdf', 'click touchstart', function(event)
+{
+	pdf_clicked = true;
+	window.open("pdfs/KevinLee.Resume.pdf");
 });
 
 function update_screen(url, display_new_text_func)
@@ -148,6 +96,10 @@ function update_screen(url, display_new_text_func)
 
 		display_new_text_func();
 
+		// Generate colors if home
+		if (url == "home")
+			quad_color_start();
+
 		$('#col-9').velocity({
 			opacity: 1,
 			"left": old_pos
@@ -157,6 +109,7 @@ function update_screen(url, display_new_text_func)
 
 		// In addition, fade in fixed text from resume
 		if (url == "resume")
+		{
 			// Fade in text
 			fade_in_resume();
 
@@ -165,7 +118,7 @@ function update_screen(url, display_new_text_func)
 			
 			// Fix scrolling
 			$('#info').scroll(resume_scroll);
-
+		}
 	});
 
 	// In addition, fade out fixed text from resume
@@ -234,66 +187,27 @@ $(window).resize(function() {
 
 function home_info()
 {
-	// Append regular bio-wrapper
-	$('#col-9').append("<div class=\"bio-wrapper-home\" id=\"info\">");
+	// Append big_wrapper
+	$('#col-9').append("<div class=\"big_wrapper\">");
 
-	// Body
-	$('#info').append("<p class=\"the-code-header left-pad-home beginning-pad\"><span class=\"cyan italic\">class</span><span class=\"green\"> &nbsp;KevKev</span><span class=\"white\"> {</span></p>\
-					\
-					<!-- Public: -->\
-					<p class=\"the-code-priv-pub left-pad-home\">\
-						<span class=\"pink\">public:</span>\
-					</p>\
-					\
-					<p class=\"the-code-comment links-home\">\
-						<span class=\"grey\">// All about me</span>\
-					</p>\
-					\
-					<p class=\"the-code-body links-home\">\
-						\<span class=\"clickable\" id=\"about\"><span class=\"green\">KevKev</span>\<span class=\"white\">()</span></span>\<span class=\"white\">;</span>\
-					</p><br>\
-					\
-					<p class=\"the-code-comment links-home\">\
-						<span class=\"grey\">// My experiences</span>\
-					</p>\
-					\
-					<p class=\"the-code-body links-home\">\
-						<span class=\"white\">list&#8249;string&#8250;&nbsp;</span><span class=\"clickable\" id=\"resume\"><span class=\"green\">resume</span><span class=\"white\">()</span></span><span class=\"white\">;</span>\
-					</p><br>\
-					\
-					<p class=\"the-code-comment links-home\">\
-						<span class=\"grey\">// Say hello!</span>\
-					</p>\
-					\
-					<p class=\"the-code-body links-home\">\
-						<span class=\"white\">string&nbsp;</span><a href=\"\"><span class=\"green\">contactMe</span><span class=\"white\">(string</span><span class=\"pink\">& </span><span class=\"orange\">email</span><span class=\"white\">)</span></a><span class=\"white\">;</span>\
-					</p><br>\
-					\
-					<!-- Private: -->\
-					<p class=\"the-code-priv-pub left-pad-home\">\
-						<span class=\"pink\">private:</span>\
-					</p>\
-					\
-					<p class=\"the-code-comment links-home\">\
-						<span class=\"grey\">// Mine.</span>\
-					</p>\
-					\
-					<p class=\"the-code-body links-home\">\
-						<span class=\"white\">list&#8249;string&#8250;&nbsp;</span><a href=\"\"><span class=\"green\">myDiary</span><span class=\"white\">()</span></a><span class=\"white\">;</span>\
-					</p><br>\
-					\
-					<p class=\"the-code-comment links-home\">\
-						<span class=\"grey\">// pls.</span>\
-					</p>\
-					\
-					<p class=\"the-code-body links-home\">\
-						<span class=\"white\">list&#8249;string&#8250;&nbsp;</span><a href=\"\"><span class=\"green\">myFeelings</span><span class=\"white\">()</span></a><span class=\"white\">;</span>\
-					</p>\
-					\
-					<p class=\"the-code-header left-pad-home\">\
-						<span class=\"white\">};</span>\
-					</p>"
-	)
+	// Append body
+	$('.big_wrapper').append("<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
+							<p class=\"code-header thin-underline-orange center\" id=\"about_header\"><b><span class=\"cyan italic\">struct</span><span class=\"green\"> KevKev</span><span class=\"white\">{};</span></b></p>\
+						</div>\
+						<div class=\"quad_wrapper\" id=\"quad_wrapper_id\">\
+							<div class=\"quad\" id=\"q_about\">\
+								<p class=\"white code-quad\">about()</p>\
+							</div>\
+							<div class=\"quad\" id=\"q_resume\">\
+								<p class=\"white code-quad\">resume(<span class=\"orange\" id=\"pdf\">pdf</span>)</p>\
+							</div>\
+							<div class=\"quad\" id=\"q_contact\">\
+								<p class=\"white code-quad\">contactMe()</p>\
+							</div>\
+							<div class=\"quad\" id=\"q_other\">\
+								<p class=\"white code-quad\">Connect!</p>\
+							</div>\
+						</div>");
 
 	// Closing div
 	$('#col-9').append("</div>");
