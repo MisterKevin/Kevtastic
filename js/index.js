@@ -98,7 +98,10 @@ function update_screen(url, display_new_text_func)
 
 		// Generate colors if home
 		if (url == "home")
+		{
+			pdf_clicked = false;
 			quad_color_start();
+		}
 
 		$('#col-9').velocity({
 			opacity: 1,
@@ -148,6 +151,8 @@ window.onpopstate = function(event)
 		else if (event.state.url == "home")
 		{
 			home_info();
+			quad_color_start();
+			pdf_clicked = false;
 		}
 		else if (event.state.url == "resume")
 		{
@@ -199,7 +204,7 @@ function home_info()
 								<p class=\"white code-quad\">about()</p>\
 							</div>\
 							<div class=\"quad\" id=\"q_resume\">\
-								<p class=\"white code-quad\">resume(<span class=\"orange\" id=\"pdf\">pdf</span>)</p>\
+								<p class=\"white code-quad\">resume(<span id=\"pdf\">pdf</span>)</p>\
 							</div>\
 							<div class=\"quad\" id=\"q_contact\">\
 								<p class=\"white code-quad\">contactMe()</p>\

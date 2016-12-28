@@ -136,7 +136,7 @@ a:hover {
 }
 
 .bio-wrapper-center-about-body {
-	background: rgba(204, 204, 204, 0.1);
+	background: rgba(30, 30, 30, 0.8);
 	border-radius: 10px;
 
 	padding-top: 1%;
@@ -151,6 +151,11 @@ a:hover {
 	margin: 0 auto;
 	height: auto;
 	overflow-x: hidden;	
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .bio-wrapper-center-about-body-inner {
@@ -292,6 +297,11 @@ a:hover {
 .code-quad {
 	font-family: 'Fira Mono', monospace;
 	font-size: 3vw;
+}
+
+.code-fira {
+	font-family: 'Fira Mono', monospace;
+	font-size: 1vw;
 }
 
 /*////////////////////*/
@@ -584,5 +594,6 @@ a:hover {
 }
 
 #pdf:hover {
+	cursor: pointer;
 	text-decoration: underline;
 }

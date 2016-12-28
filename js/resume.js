@@ -114,7 +114,7 @@ function resume_info()
 	$('#col-9').append("<div class=\"bio-wrapper-center\" id=\"info\">");
 
 	// Append header
-	$('#info').append("<p class=\"the-code-header white center thin-underline-orange\">Resume</p>");
+	$('#info').append("<p class=\"code-header white center thin-underline-orange\"><span class=\"white\"><b>resume(</span><span class=\"orange\" id=\"pdf\">pdf</span><span class=\"white\">)</b></span></p>");
 
 	// Append left-div for resume
 	$('#info').append("<div class=\"col-md-6\" id=\"resume-left-container\">");

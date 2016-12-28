@@ -64,6 +64,9 @@ function quad_color_start()
 		$(value).css("opacity", .6);
 		$(value).css("border", "2px solid" + random_colors[index]);
 	});
+
+	// Update "pdf" color to match border color
+	$("#pdf").css("color", random_colors[1]);
 }
 
 function generate_random_colors()
