@@ -2,7 +2,7 @@
 var state = "";
 var animation_running = false;
 var global_animation_time = 600;
-var global_ease_in = "easeInCubic";
+var global_ease_in = "easeInQuart";
 var global_ease_out = "easeOutQuad";
 var gradient_update_interval_ID = 0;
 var pdf_clicked = false;
@@ -203,22 +203,24 @@ function home_info()
 								<p class=\"white code-quad\">about()</p>\
 							</div>\
 							<div class=\"quad_tips tips_about\" id=\"q_about_tip_1\">\
-								<p class=\"white text-handwriting\" style=\"font-size: 1.6vw;\">tl;dr version of who I am</p>\
+								<p class=\"text-handwriting\" style=\"font-size: 1.9vw;\">tl;dr version of who i am</p>\
 							</div>\
 							<div class=\"quad_tips tips_about\" id=\"q_about_tip_2\">\
-								<p class=\"white text-handwriting\" style=\"font-size: 1.8vw;\">Find out about my hobbies!</p>\
+								<p class=\"text-handwriting\" style=\"font-size: 2.3vw;\">a quick glimpse into my life</p>\
 							</div>\
 							<div class=\"quad_tips tips_about\" id=\"q_about_tip_3\">\
-								<p class=\"white text-handwriting\" style=\"font-size: 2.3vw;\">Hello World!</p>\
+								<p class=\"text-handwriting\" style=\"font-size: 2.8vw;\">Hello World!</p>\
 							</div>\
 							<div class=\"quad\" id=\"q_resume\">\
 								<p class=\"white code-quad\">resume(<span id=\"pdf\">pdf</span>)</p>\
 							</div>\
 							<div class=\"quad_tips tips_resume\" id=\"q_resume_pdf_tip\">\
-								<p class=\"white text-handwriting\">Click here for a .pdf version!</p>\
+								<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">Click here for a .pdf version!</p>\
+							</div>\
+							<div class=\"quad_tips tips_resume\" id=\"q_resume_arrow_tip\">\
 							</div>\
 							<div class=\"quad_tips tips_resume\" id=\"q_resume_info_tip\">\
-								<p class=\"white text-handwriting\">View my professional life here</p>\
+								<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">view my professional life here</p>\
 							</div>\
 							<div class=\"quad\" id=\"q_contact\">\
 								<p class=\"white code-quad\">contactMe()</p>\
