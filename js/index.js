@@ -73,7 +73,33 @@ $(document).delegate('.portrait', 'click touchstart', function(event)
 $(document).delegate('#pdf', 'click touchstart', function(event)
 {
 	pdf_clicked = true;
-	window.open("pdfs/KevinLee.Resume.pdf");
+	var newWindow = window.open("pdfs/KevinLee.Resume.pdf");
+
+	// Credit: http://stackoverflow.com/questions/21241612
+	// Inserting favicon into new opened window
+	var script = "<sc" + "ript>" + 
+					"(function() {" + 
+					"   var link = document.createElement('link');" + 
+					"   link.type = 'image/x-icon';" + 
+					"   link.rel = 'shortcut icon';" + 
+					"   link.href = 'images/mrkevincolor-06.png';" + 
+					"   document.getElementsByTagName('head')[0].appendChild(link);" + 
+					"}());" + 
+					"</sc" + 
+					"ript>";
+
+	console.log(script);
+
+	newWindow.document.writeln(
+	    '<html><head><title>My title</title>' + script + '</head>' + '<body onLoad="self.focus()">' + '</body></html>'
+	);
+});
+
+// Back arrow on click, in index.js as it's in every sub-js
+$(document).delegate('#back-arrow-id', 'click touchstart', function(event)
+{
+	if (!animation_running)
+		update_screen("home", home_info);
 });
 
 function update_screen(url, display_new_text_func)
@@ -94,6 +120,9 @@ function update_screen(url, display_new_text_func)
 		$('#col-9').empty();
 
 		display_new_text_func();
+
+		// Position back arrows
+		position_back_arrows(url);
 
 		// Generate colors if home
 		if (url == "home")
@@ -130,6 +159,18 @@ function update_screen(url, display_new_text_func)
 	// Update History
 	if (history.state.url != "home" || url != "home")
 		history.pushState({ url: url }, "", "");
+}
+
+// This function initializes back-arrow to be center of header
+function position_back_arrows(url)
+{
+	var id = "";
+	if (url == "about")
+		id = "#about-header";
+	else if (url == "resume")
+		id = "#resume-header";
+
+	$(".back-arrow").css('top', (parseInt($(id).css('height')) / 2) - (parseInt($('#back-arrow-id').css('height')) / 2));	
 }
 
 window.onpopstate = function(event)
@@ -196,7 +237,7 @@ function home_info()
 
 	// Append body
 	$('.big_wrapper').append("<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
-							<p class=\"code-header thin-underline-orange center\" id=\"about_header\"><b><span class=\"cyan italic\">struct</span><span class=\"green\"> KevKev</span><span class=\"white\">{};</span></b></p>\
+							<p class=\"code-header thin-underline-orange center\" id=\"about-header\"><b><span class=\"cyan italic\">struct</span><span class=\"green\"> KevKev</span><span class=\"white\">{};</span></b></p>\
 						</div>\
 						<div class=\"quad_wrapper\" id=\"quad_wrapper_id\">\
 							<div class=\"quad\" id=\"q_about\">\

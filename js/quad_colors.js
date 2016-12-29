@@ -11,6 +11,14 @@ var arrow_img_colors = [ "images/green_arrow.png", "images/cyan_arrow.png", "ima
 var arrow_color_index= 0;
 
 /* Hover */
+$(document).delegate("#pdf", 'mouseenter mouseleave', function(event) 
+{ // This is the hover function for the pdf span only
+	if (event.type === "mouseenter")
+		$("#pdf").css("background-color", "#4d4d4d");
+	else
+		$("#pdf").css("background-color", "");
+});
+
 $(document).delegate('.quad', 'mouseenter', function(event)
 {
 	var this_div = "#" + this.id;

@@ -113,8 +113,11 @@ function resume_info()
 	// Append special centered bio-wrapper
 	$('#col-9').append("<div class=\"bio-wrapper-center\" id=\"info\">");
 
+	// Append back-arrows
+	$('#info').append("<div class=\"back-arrow\"><p class=\"code-header grey clickable\" id=\"back-arrow-id\"><<<</p></div>");
+
 	// Append header
-	$('#info').append("<p class=\"code-header white center thin-underline-orange\"><span class=\"white\"><b>resume(</span><span class=\"orange\" id=\"pdf\">pdf</span><span class=\"white\">)</b></span></p>");
+	$('#info').append("<p class=\"code-header white center thin-underline-orange\" id=\"resume-header\"><span class=\"white\"><b>resume(</span><span class=\"orange\" id=\"pdf\">pdf</span><span class=\"white\">)</b></span></p>");
 
 	// Append left-div for resume
 	$('#info').append("<div class=\"col-md-6\" id=\"resume-left-container\">");

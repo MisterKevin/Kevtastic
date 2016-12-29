@@ -4,11 +4,14 @@ function about_info()
 {
 	$('#col-9').append("<div class=\"big_wrapper\" id=\"big_wrapper_id\">");
 
+	// Append back-arrows
+	$('#big_wrapper_id').append("<div class=\"back-arrow\"><p class=\"code-header grey clickable\" id=\"back-arrow-id\"><<<</p></div>");
+
 	// Append special centered bio-wrapper
 	$('#big_wrapper_id').append("<div class=\"bio-wrapper-center-about-header\" id=\"info\">");
 
 	// Body
-	$('#info').append("<p class=\"code-header white thin-underline-orange center\" id=\"about_header\"><b>about()</b></p>");
+	$('#info').append("<p class=\"code-header white thin-underline-orange center\" id=\"about-header\"><b>about()</b></p>");
 
 	// Close bio-wrapper-header
 	$('#big_wrapper_id').append("</div>");

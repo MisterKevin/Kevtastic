@@ -50,11 +50,11 @@ a {
 }
 
 a:hover {
-	background-color: #696969;
+	background-color: #4D4D4D;
 }
 
 .clickable:hover {
-	background-color: #696969;
+	background-color: #4D4D4D;
 	cursor: pointer;
 }
 
@@ -121,6 +121,8 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
+
+	position: relative;
 }
 
 .bio-wrapper-center-about-header {
@@ -173,6 +175,20 @@ a:hover {
 .bio-wrapper-home {
 	width: 100%;
 	overflow-x: hidden;
+}
+
+.back-arrow {
+	z-index: 20;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	text-align: center;
+	opacity: 1;
+	left: 0%;
+}
+
+#back-arrow-id {
+	font-size: 2vw;
 }
 
 /*//////////////////////////*/
@@ -563,6 +579,8 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+
+	position: relative;
 }
 
 .quad_wrapper {
@@ -609,13 +627,13 @@ a:hover {
 
 #q_about_tip_1 {
 	width: 18%;
-	left: 3%;
+	left: 2%;
 	top: 20%;
 
 	/* Tilting the text */
-	-ms-transform: rotate(-8deg); /* IE 9 */
-    -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
-    transform: rotate(-8deg);
+	-ms-transform: rotate(-12deg); /* IE 9 */
+    -webkit-transform: rotate(-12deg); /* Chrome, Safari, Opera */
+    transform: rotate(-12deg);
 }
 
 #q_about_tip_2 {
@@ -664,8 +682,8 @@ a:hover {
 }
 
 #q_resume_info_tip {
-	width: 24%;
-	right: 24%;
+	width: 28%;
+	right: 22%;
 	top: 40%;
 
 	/* Tilting the text */
