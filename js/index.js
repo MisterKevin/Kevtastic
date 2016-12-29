@@ -73,26 +73,7 @@ $(document).delegate('.portrait', 'click touchstart', function(event)
 $(document).delegate('#pdf', 'click touchstart', function(event)
 {
 	pdf_clicked = true;
-	var newWindow = window.open("pdfs/KevinLee.Resume.pdf");
-
-	// Credit: http://stackoverflow.com/questions/21241612
-	// Inserting favicon into new opened window
-	var script = "<sc" + "ript>" + 
-					"(function() {" + 
-					"   var link = document.createElement('link');" + 
-					"   link.type = 'image/x-icon';" + 
-					"   link.rel = 'shortcut icon';" + 
-					"   link.href = 'images/mrkevincolor-06.png';" + 
-					"   document.getElementsByTagName('head')[0].appendChild(link);" + 
-					"}());" + 
-					"</sc" + 
-					"ript>";
-
-	console.log(script);
-
-	newWindow.document.writeln(
-	    '<html><head><title>My title</title>' + script + '</head>' + '<body onLoad="self.focus()">' + '</body></html>'
-	);
+	window.open("pdfs/KevinLee.Resume.pdf");
 });
 
 // Back arrow on click, in index.js as it's in every sub-js
