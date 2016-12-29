@@ -2,10 +2,10 @@
 
 function contact_info()
 {
-	$('#col-9').append(\"<div class=\"big_wrapper\" id=\"big_wrapper_id\">\
+	$('#col-9').append("<div class=\"big_wrapper\" id=\"big_wrapper_id\">\
 		<div class=\"back-arrow\"><p class=\"code-header grey clickable\" id=\"back-arrow-id\"><<<</p></div>\
 		<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
-			<p class=\"code-header white thin-underline-orange center\" id=\"about-header\"><b>about()</b></p>\
+			<p class=\"code-header white thin-underline-orange center\" id=\"contact-header\"><b>contactMe()</b></p>\
 		</div>\");\
 		<div class=\"bio-wrapper-center-about-body\">\
 			<div class=\"bio-wrapper-center-about-body-inner\">\

@@ -81,7 +81,6 @@ $(document).delegate('#pdf', 'click touchstart', function(event)
 	window.open("pdfs/KevinLee.Resume.pdf");
 });
 
-
 // Back arrow on click, in index.js as it's in every sub-js
 $(document).delegate('#back-arrow-id', 'click touchstart', function(event)
 {
@@ -156,6 +155,8 @@ function position_back_arrows(url)
 		id = "#about-header";
 	else if (url == "resume")
 		id = "#resume-header";
+	else if (url == "contact")
+		id = "#contact-header";
 
 	$(".back-arrow").css('top', (parseInt($(id).css('height')) / 2) - (parseInt($('#back-arrow-id').css('height')) / 2));	
 }
