@@ -51,11 +51,16 @@ $(document).delegate('#q_about', 'click touchstart', function(event)
 
 $(document).delegate('#q_resume', 'click touchstart', function(event)
 {
-	console.log("resume");
 	if (!animation_running && !pdf_clicked)
 		update_screen("resume", resume_info);
 	else
 		pdf_clicked = false;
+});
+
+$(document).delegate('#q_contact', 'click touchstart', function(event)
+{
+	if (!animation_running)
+		update_screen("contact", contact_info);
 });
 
 $(document).delegate('.portrait-caption', 'click touchstart', function(event)
@@ -75,6 +80,7 @@ $(document).delegate('#pdf', 'click touchstart', function(event)
 	pdf_clicked = true;
 	window.open("pdfs/KevinLee.Resume.pdf");
 });
+
 
 // Back arrow on click, in index.js as it's in every sub-js
 $(document).delegate('#back-arrow-id', 'click touchstart', function(event)
