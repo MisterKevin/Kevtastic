@@ -5,7 +5,6 @@ function submit_contact(event)
 {
 	// Don't let page refresh
 	event.preventDefault();
-	
 
 	// Check for errors
 	var error_container = form_error_check();
@@ -18,6 +17,9 @@ function submit_contact(event)
 	}
 	else
 	{
+		// Stop button from being pressed again, until page reloads
+		$('#submit-id').addClass('disabled');
+
 		// Send the AJAX message
 		$.ajax({
 			url: 'https://formspree.io/mrkevinlee95@gmail.com',
@@ -121,7 +123,7 @@ function loading_msg()
 
 	$('.error-container').append("\
 		<p class=\"loading-msg\">\
-			Loading.\
+			Loading. . .\
 		</p>\
 	");
 

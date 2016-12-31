@@ -127,7 +127,10 @@ function contact_info()
    $("#tel-id").mask("(999) 999-9999");
 	});
 
+	// Initialize submit function
 	$('#form-kl').submit(submit_contact);
+
+
 }
 
 function home_info()

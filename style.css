@@ -791,9 +791,9 @@ a:hover {
 	top: 83%;
 
 	/* Tilting the text */
-	-ms-transform: rotate(.5deg); /* IE 9 */
-    -webkit-transform: rotate(.5deg); /* Chrome, Safari, Opera */
-    transform: rotate(.5deg);
+	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
 }
 
 #pdf:hover {
