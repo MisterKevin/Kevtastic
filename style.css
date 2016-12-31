@@ -1,4 +1,4 @@
-/*///////////////////////*/
+///////////////////////*/
 /*GLOBALS GLOBALS GLOBALS*/
 /*///////////////////////*/
 @keyframes fade {
@@ -320,6 +320,11 @@ a:hover {
 	font-size: 1.2vw;
 }
 
+.text-btn-fira {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 1.5vw;
+}
+
 .text-handwriting {
 	font-family: "Indie Flower", cursive;
 	font-size: 1.8vw;
@@ -340,12 +345,20 @@ a:hover {
 	color: #A6E22E;
 }
 
+.green-text {
+	color: #B3E74B;
+}
+
 .green::selection {
 	color: #ADFF2F;
 }
 
 .cyan {
 	color: #66D9EF;
+}
+
+.cyan-text {
+	color: #75DCF0;
 }
 
 .cyan::selection {
@@ -356,6 +369,10 @@ a:hover {
 	color: #F92672;
 }
 
+.pink-text {
+	color: #FB518F;
+}
+
 .pink::selection {
 	color: #FF28B4;
 }
@@ -364,12 +381,20 @@ a:hover {
 	color: #75715E;
 }
 
+.grey-text-kl {
+	color: #c6c4b8;
+}
+
 .grey::selection {
 	color: white;
 }
 
 .orange {
 	color: #FD971F;
+}
+
+.orange-text {
+	color: #FDA035;
 }
 
 .orange::selection {
@@ -695,4 +720,9 @@ a:hover {
 #pdf:hover {
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+/* Boostrap */
+.form-kl {
+	background-color: black; border: 1px solid #1c1b17;
 }
