@@ -107,91 +107,9 @@ function show_experience(curr_map_index)
 	}
 }
 
-// This function prints out the page
-function resume_info()
+// This function forces the text to be positioned correctly
+function resume_position_texts()
 {
-	// Append special centered bio-wrapper
-	$('#col-9').append("<div class=\"bio-wrapper-center\" id=\"info\">");
-
-	// Append back-arrows
-	$('#info').append("<div class=\"back-arrow\"><p class=\"code-header grey clickable\" id=\"back-arrow-id\"><<<</p></div>");
-
-	// Append header
-	$('#info').append("<p class=\"code-header white center thin-underline-orange\" id=\"resume-header\"><span class=\"white\"><b>resume(</span><span class=\"orange\" id=\"pdf\">pdf</span><span class=\"white\">)</b></span></p>");
-
-	// Append left-div for resume
-	$('#info').append("<div class=\"col-md-6\" id=\"resume-left-container\">");
-
-	// Append left div
-	$('#resume-left-container').append("<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Education</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> University of Michigan - Bachelor's of Science</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Ann Arbor, MI | Fall '13 - May '17</span></span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Major: Computer Science | Minor: Music | GPA: 3.3 / 4.0</span></span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> International Academy - International Baccalaureate Diploma</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Bloomfield Hills, MI | Fall '09 - Winter '13</span></span></p>\
-							\
-							<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Extracurriculars</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> CoE Undergraduate Student Advisory Board Member</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Fall '16 - <i>Present</i></span></span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Michigan Hope Volunteering</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Fall '15 - <i>Present</i></span></span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Computer Science Engineering Scholars</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Winter '15 - <i>Present</i></span></span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Philip Hayden Foundation Volunteer</span></p>\
-							<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Winter '13</span></span></p>\
-							\
-							<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Courses Taken</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 482: Operating Systems</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 388: Computer Security</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 485: Web Database and Information Systems</span></p>\
-							\
-							<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Skills</span></p>\
-							\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Primary: C++11, Python, C, OpenGL</span></p>\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Secondary: Multithreading, C++14, Boost.Asio, R</span></p>\
-							<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Tertiary: HTML/CSS, Javascript, SQL, Java, OpenCV</span></p>");
-
-	// Append closing div for left-div of resume
-	$('#info').append("</div>");
-
-	// Begin appending new div for right-div
-	$('#info').append("<div class=\"col-md-6\" id=\"experience-wrapper\">");
-
-	// Append right-div
-	$('#experience-wrapper').append("<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Experience</span></p>\
-							\
-							<div class=\"experience\" id=\"experience-wt\">\
-								<p class=\"white text-body-raleway center\" id=\"experience-wt-text\"><b><span class=\"green\">Software Engineer Intern</span></b> with <b><span class=\"white\">Wolverine Trading, LLC</span></b><br>Chicago, IL | Summer '16</span></p>\
-							</div>\
-							\
-							<div class=\"experience\" id=\"experience-mdp\">\
-								<p class=\"white text-body-raleway center\" id=\"experience-mdp-text\"><b><span class=\"cyan\">Multidisciplinary Design Program</span></b> with <b><span class=\"white\">MDA Information Systems</span></b><br>Ypsilanti, MI | Winter '16 - Fall '16</p>\
-							</div>\
-							\
-							<div class=\"experience\" id=\"experience-ak\">\
-								<p class=\"white text-body-raleway center\" id=\"experience-ak-text\"><b><span class=\"pink\">Process Control Intern</span></b> with <b><span class=\"white\">AK Steel Corporation</span></b><br>Dearborn, MI | Summer '15</p>\
-							</div>\
-							\
-							<div class=\"experience\" id=\"experience-183\">\
-								<p class=\"white text-body-raleway center\" id=\"experience-183-text\"><b><span class=\"orange\">EECS 183 Instructional Aide</span></b> with <b><span class=\"white\">University of Michigan</span></b><br>Ann Arbor, MI | Fall '15 - Winter '17</p>\
-							</div>");
-
-	// Append closing div for right-div of resume
-	$('#info').append("</div>");
-
-	// Closing div
-	$('#col-9').append("</div>");
-
-	// Position the texts correctly
 	$('#experience-wt-text').css('top', $('#experience-wt').offset().top + (((parseInt($('#experience-wt').css('top')) + parseInt($('#experience-wt').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
 	$('#experience-wt-text').css('left', $('#experience-wt').offset().left + (((parseInt($('#experience-wt').css('left')) + parseInt($('#experience-wt').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
 	$('#experience-mdp-text').css('top', $('#experience-mdp').offset().top + (((parseInt($('#experience-mdp').css('top')) + parseInt($('#experience-mdp').css('height'))) / 2) - (parseInt($('#experience-mdp-text').css('height')) / 2)));

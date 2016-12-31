@@ -205,8 +205,7 @@ window.onpopstate = function(event)
 }
 
 $(window).resize(function() {
-	if (state == "resume")
-	{
+	if (state == "resume") {
 		$('#experience-wt-text').css('top', $('#experience-wt').offset().top + (((parseInt($('#experience-wt').css('top')) + parseInt($('#experience-wt').css('height'))) / 2) - (parseInt($('#experience-wt-text').css('height')) / 2)));
 		$('#experience-wt-text').css('left', $('#experience-wt').offset().left + (((parseInt($('#experience-wt').css('left')) + parseInt($('#experience-wt').css('width'))) / 2) - (parseInt($('#experience-wt-text').css('width')) / 2)));
 		$('#experience-mdp-text').css('top', $('#experience-mdp').offset().top + (((parseInt($('#experience-mdp').css('top')) + parseInt($('#experience-mdp').css('height'))) / 2) - (parseInt($('#experience-mdp-text').css('height')) / 2)));
@@ -217,48 +216,3 @@ $(window).resize(function() {
 		$('#experience-183-text').css('left', $('#experience-183').offset().left + (((parseInt($('#experience-183').css('left')) + parseInt($('#experience-183').css('width'))) / 2) - (parseInt($('#experience-183-text').css('width')) / 2)));
 	}
 });
-
-function home_info()
-{
-	// Append big_wrapper
-	$('#col-9').append("<div class=\"big_wrapper\">");
-
-	// Append body
-	$('.big_wrapper').append("<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
-							<p class=\"code-header thin-underline-orange center\" id=\"about-header\"><b><span class=\"cyan italic\">struct</span><span class=\"green\"> KevKev</span><span class=\"white\">{};</span></b></p>\
-						</div>\
-						<div class=\"quad_wrapper\" id=\"quad_wrapper_id\">\
-							<div class=\"quad\" id=\"q_about\">\
-								<p class=\"white code-quad\">about()</p>\
-							</div>\
-							<div class=\"quad_tips tips_about\" id=\"q_about_tip_1\">\
-								<p class=\"text-handwriting\" style=\"font-size: 1.9vw;\">tl;dr version of who i am</p>\
-							</div>\
-							<div class=\"quad_tips tips_about\" id=\"q_about_tip_2\">\
-								<p class=\"text-handwriting\" style=\"font-size: 2.3vw;\">a quick glimpse into my life</p>\
-							</div>\
-							<div class=\"quad_tips tips_about\" id=\"q_about_tip_3\">\
-								<p class=\"text-handwriting\" style=\"font-size: 2.8vw;\">Hello World!</p>\
-							</div>\
-							<div class=\"quad\" id=\"q_resume\">\
-								<p class=\"white code-quad\">resume(<span id=\"pdf\">pdf</span>)</p>\
-							</div>\
-							<div class=\"quad_tips tips_resume\" id=\"q_resume_pdf_tip\">\
-								<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">Click here for a .pdf version!</p>\
-							</div>\
-							<div class=\"quad_tips tips_resume\" id=\"q_resume_arrow_tip\">\
-							</div>\
-							<div class=\"quad_tips tips_resume\" id=\"q_resume_info_tip\">\
-								<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">view my professional life here</p>\
-							</div>\
-							<div class=\"quad\" id=\"q_contact\">\
-								<p class=\"white code-quad\">contactMe()</p>\
-							</div>\
-							<div class=\"quad\" id=\"q_other\">\
-								<p class=\"white code-quad\">connect()</p>\
-							</div>\
-						</div>");
-
-	// Closing div
-	$('#col-9').append("</div>");
-};
