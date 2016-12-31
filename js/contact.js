@@ -20,7 +20,7 @@ function contact_info()
 					</div>\
 					<div class=\"form-group\">\
 					  <label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Telephone</label>\
-				    <input name=\"tel-num\" type=\"phone\" class=\"form-control\" style=\"background-color: #d9d9d9;\"type=\"tel\" id=\"tel-input\" placeholder=\"(555) 555-5555\">\
+				    <input name=\"tel-num\" type=\"tel\" class=\"form-control\" style=\"background-color: #d9d9d9;\"type=\"tel\" id=\"tel-input\" placeholder=\"(555) 555-5555\">\
 						<small id=\"emailHelp\" class=\"form-text text-muted text-body-fira\" style=\"font-size: .9vw\">(Optional) Enter your phone number if you'd like to chat over a call instead!</small>\
 					</div>\
 					<div class=\"form-group\">\
