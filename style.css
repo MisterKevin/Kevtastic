@@ -735,3 +735,9 @@ a:hover {
 	font-size: 1.1vw;
 	color: #FB518F;
 }
+
+.loading-msg {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 1.1vw;
+	color: #FDA035;
+}

@@ -1,24 +1,32 @@
 // This .js file is for all things on the contactMe page.
+var refreshIntervalID = 0;
+
 function submit_contact(event)
 {
 	// Don't let page refresh
 	event.preventDefault();
 	
-	// Delete old error container
-	$('.error-container').empty();
 
 	// Check for errors
 	var error_container = form_error_check();
-	if (error_container.length > 0)
+	if (error_container.length > 0) 
+	{
+		// Delete old error container
+		$('.error-container').empty();
+
 		contact_form_error(error_container);
+	}
 	else
 	{
-		// Send the AJAX message
+		Send the AJAX message
 		$.ajax({
 			url: 'https://formspree.io/mrkevinlee95@gmail.com',
 			method: 'POST',
 			dataType: 'json',
 			data: $('#form-kl').serialize(),
+			beforeSend: function() {
+				loading_msg();
+			},
 			success: function(data) {
 				contact_success();
 			},
@@ -48,6 +56,9 @@ function form_error_check()
 // Animates the form and displays appropriate text
 function contact_success()
 {
+	// Clear setInterval call
+	clearInterval(refreshIntervalID);
+
 	// Lower opacity of text, shrink div, then display success message
 	$('.bio-wrapper-center-about-body-inner').velocity({
 		opacity: 0
@@ -96,4 +107,19 @@ function formspree_error()
 			Hmm, something seems to be going wrong with the e-mail service. My sincerest apologies! Please try sending me an e-mail directly at <span class=\"orange\"><u>mrkevinlee95@gmail.com</u></span>.\
 		</p>\
 	");
+}
+
+// Show loading message
+function loading_msg()
+{
+	loading = true;
+	$('.error-container').append("\
+		<p class=\"loading-msg\">\
+			Loading.\
+		</p>\
+	");
+
+	refreshIntervalID = setInterval(function() {
+		$('.loading-msg').append(" .");
+	}, 1000);
 }
