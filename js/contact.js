@@ -16,16 +16,16 @@ function contact_info()
 					</div>\
 					<div class=\"form-group\">\
 						<label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Email Address <span class=\"pink-text\">*</span></label>\
-						<input type=\"email\" class=\"form-control\" style=\"background-color: #d9d9d9;\" aria-describedby=\"emailHelp\" id=\"email-id\" placeholder=\"johndoe@email.com\">\
+						<input name=\"email\" type=\"email\" class=\"form-control\" style=\"background-color: #d9d9d9;\" aria-describedby=\"emailHelp\" id=\"email-id\" placeholder=\"johndoe@email.com\">\
 					</div>\
 					<div class=\"form-group\">\
 					  <label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Telephone</label>\
-				    <input type=\"phone\" class=\"form-control\" style=\"background-color: #d9d9d9;\"type=\"tel\" id=\"tel-input\" placeholder=\"(555) 555-5555\">\
+				    <input name=\"tel-num\" type=\"phone\" class=\"form-control\" style=\"background-color: #d9d9d9;\"type=\"tel\" id=\"tel-input\" placeholder=\"(555) 555-5555\">\
 						<small id=\"emailHelp\" class=\"form-text text-muted text-body-fira\" style=\"font-size: .9vw\">(Optional) Enter your phone number if you'd like to chat over a call instead!</small>\
 					</div>\
 					<div class=\"form-group\">\
 				    <label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Body <span class=\"pink-text\">*</span></label>\
-				    <textarea class=\"form-control\" style=\"background-color: #d9d9d9;\" id=\"text-area\" rows=\"8\" placeholder=\"Talk to me here!\"></textarea>\
+				    <textarea name=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9;\" id=\"text-area\" rows=\"8\" placeholder=\"Talk to me here!\"></textarea>\
 				  </div>\
 				  <input type=\"text\" name=\"_gotcha\" style=\"display:none\"/>\
 					<input type=\"submit\" value=\"Send\" class=\"btn btn-warning text-btn-fira\"></button><br><br>\

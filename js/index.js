@@ -255,7 +255,7 @@ function home_info()
 								<p class=\"white code-quad\">contactMe()</p>\
 							</div>\
 							<div class=\"quad\" id=\"q_other\">\
-								<p class=\"white code-quad\">Connect!</p>\
+								<p class=\"white code-quad\">connect()</p>\
 							</div>\
 						</div>");
 
