@@ -381,7 +381,7 @@ a:hover {
 	color: #75715E;
 }
 
-.grey-text-kl {
+.grey-text {
 	color: #c6c4b8;
 }
 
@@ -505,19 +505,19 @@ a:hover {
 }
 
 #experience-wt {
-	border: 0.5px solid #80b418;
+	border: .9px solid #B3E74B;
 }
 
 #experience-mdp {
-	border: 0.5px solid #16b1d0;
+	border: .9px solid #75DCF0;
 }
 
 #experience-ak {
-	border: 0.5px solid #e00656;
+	border: .9px solid #FB518F;
 }
 
 #experience-183 {
-	border: 0.5px solid #e37a02;
+	border: .9px solid #FDA035;
 }
 
 #experience-wt:hover, #experience-mdp:hover, #experience-ak:hover, #experience-183:hover {
@@ -722,7 +722,16 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Boostrap */
+/*/////////////////*/
+/* CONTACT SECTION */
+/*/////////////////*/
+
 .form-kl {
 	background-color: black; border: 1px solid #1c1b17;
+}
+
+.form-error {
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 1.1vw;
+	color: #FB518F;
 }

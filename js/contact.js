@@ -3,45 +3,97 @@ function submit_contact(event)
 {
 	// Don't let page refresh
 	event.preventDefault();
+	
+	// Delete old error container
+	$('.error-container').empty();
 
-	console.log("Submitting AJAX");
-	$.ajax({
-		url: 'https://formspree.io/mrkevinlee95@gmail.com',
-		method: 'POST',
-		dataType: 'json',
-		data: $('#form-kl').serialize(),
-		success: function(data) {
-			console.log("Success");
-		},
-		error: function(error) {
-			console.log("Error");
-		}
+	// Check for errors
+	var error_container = form_error_check();
+	if (error_container.length > 0)
+		contact_form_error(error_container);
+	else
+	{
+		// Send the AJAX message
+		$.ajax({
+			url: 'https://formspree.io/mrkevinlee95@gmail.com',
+			method: 'POST',
+			dataType: 'json',
+			data: $('#form-kl').serialize(),
+			success: function(data) {
+				contact_result();
+			},
+			error: function(error) {
+				formspree_error();
+			}
+		});
+	}
+
+}
+
+function form_error_check()
+{
+	var error_container = [];
+	if ($('#name-id').val().length == 0)
+		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Please fill in your name.</p>")
+	if ($('#email-id').val().length == 0)
+		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Please fill in your email.</p>")
+	else if (!/[^@]+@[^@]+\.[^@]+/.test($('#email-id').val()))
+		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Email address must be valid.</p>");
+	if ($('#text-id').val().length  < 10)
+		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Please fill in the body with a <i>bit</i> more words. Tell me about you!</p>")
+	
+	return error_container;
+}
+
+// Animates the form and displays appropriate text
+function contact_success()
+{
+	// Lower opacity of text, shrink div, then display success message
+	$('.bio-wrapper-center-about-body-inner').velocity({
+		opacity: 0
+	}, global_animation_time, function() {
+		$('.bio-wrapper-center-about-body').velocity({
+			height: new_height,
+		}, global_animation_time, function() {
+			// Delete old text
+			$('.bio-wrapper-center-about-body-inner').empty();
+
+			// Append success message
+			$('.bio-wrapper-center-about-body-inner').append("\
+				<p class=\"green-text text-body-fira\" style=\"font-size: 1.1vw\">\
+					Hurrah! You've successfully sent me an e-mail. Thanks!\
+				</p>\
+			");
+
+			// Fade in
+			$('.bio-wrapper-center-about-body-inner').velocity({
+				opacity: 1
+			}, global_animation_time);
+		});
 	});
 }
 
-// $(document).delegate('#submit-id', 'click touchstart', function(event)
-// {
-// 	// Don't let page refresh
-// 	event.preventDefault();
-// 	console.log("CLICKED\n");
+// Error in user's form
+function contact_form_error(error_container)
+{
+	$('.error-container').append("\
+		<p class=\"form-error\">\
+			Whoops! Looks like you have some errors in the form.\
+		</p>\
+	");
 
-// 	$.ajax({
-// 		url: 'https://formspree.io/mrkevinlee95@gmail.com',
-// 		method: 'POST',
-// 		dataType: 'json',
-// 		data: JSON.stringify({username: $('#new_username_input').val(), firstname: $('#new_firstname_input').val(), lastname: $('#new_lastname_input').val(), password1: $('#new_password1_input').val(), password2: $('#new_password2_input').val(), email: $('#new_email_input').val() }),
-// 		success: function(data) {
-// 			console.log("Created a new user: " + $('#new_username_input').val());
-// 			window.location="/wz0g4a2n/p3/login";
-// 		},
-// 		error: function(error) {
-// 			// Response text is: {"errors":[{"message":"FIRST"}, {"message": "SECOND"}]}
-// 			errors_dict = $.parseJSON(error.responseText);
+	$.each(error_container, function(index, value)
+	{
+		$('.error-container').append(value);
+	});
+}
 
-// 			// This loop goes through each "message" dictionary
-// 			$.each(errors_dict['errors'], function(index, value) {
-// 				$('#error_container').append("<p class='error'>" + value.message + "</p>");
-// 			});
-// 		}
-// 	});
-// });
+// In case of error not in the form, but in formspree
+function formspree_error()
+{
+	$('.error-container').append("\
+		<p class=\"form-error\">\
+			Hmm, something seems to be going wrong with the e-mail service. My sincerest apologies! Please try sending me an e-mail directly at <span class=\"orange\"><u>mrkevinlee95@gmail.com</u></span>.\
+		</p>\
+	");
+}

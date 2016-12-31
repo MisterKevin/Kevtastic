@@ -97,25 +97,26 @@ function contact_info()
 				<div class=\"bio-wrapper-center-about-body-inner\">\
 					<form id=\"form-kl\">\
 						<div class=\"form-group\">\
-							<label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Name <span class=\"pink-text\">*</span></label>\
-							<input name=\"name\" type=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"nameHelp\" placeholder=\"John Doe\">\
+							<label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Name <span class=\"pink-text\">*</span></label>\
+							<input name=\"name\" id=\"name-id\" type=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"nameHelp\" placeholder=\"John Doe\">\
 						</div>\
 						<div class=\"form-group\">\
-							<label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Email Address <span class=\"pink-text\">*</span></label>\
-							<input name=\"email\" type=\"email\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"emailHelp\" id=\"email-id\" placeholder=\"johndoe@email.com\">\
+							<label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Email Address <span class=\"pink-text\">*</span></label>\
+							<input name=\"email\" id=\"email-id\" type=\"email\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"emailHelp\" placeholder=\"johndoe@email.com\">\
 						</div>\
 						<div class=\"form-group\">\
-						  <label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Telephone</label>\
-					    <input name=\"telephone_num\" type=\"tel\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\"type=\"tel\" id=\"tel-input\" placeholder=\"(555) 555-5555\">\
+						  <label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Telephone</label>\
+					    <input name=\"tele-num\" id=\"tel-id\" type=\"tel\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\"type=\"tel\" placeholder=\"(555) 555-5555\">\
 							<small id=\"emailHelp\" class=\"form-text text-muted text-body-fira\" style=\"font-size: .9vw\">(Optional) Enter your phone number if you'd like to chat over a call instead!</small>\
 						</div>\
 						<div class=\"form-group\">\
-					    <label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Body <span class=\"pink-text\">*</span></label>\
-					    <textarea name=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" id=\"text-area\" rows=\"8\" placeholder=\"Talk to me here!\"></textarea>\
+					    <label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Body <span class=\"pink-text\">*</span></label>\
+					    <textarea name=\"body-text\" id=\"text-id\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" rows=\"8\" placeholder=\"Talk to me here!\"></textarea>\
 					  </div>\
 					  <input type=\"text\" name=\"_gotcha\" style=\"display:none\"/>\
 						<input type=\"submit\" value=\"Send\" id=\"submit-id\" class=\"btn btn-warning text-btn-fira submit\"></button><br><br>\
 					</form>\
+					<div class=\"error-container\"></div>\
 				</div>\
 			</div>\
 		</div>\
@@ -123,7 +124,7 @@ function contact_info()
 
 	// Mask input for phone # field
 	jQuery(function($){
-   $("#tel-input").mask("(999) 999-9999");
+   $("#tel-id").mask("(999) 999-9999");
 	});
 
 	$('#form-kl').submit(submit_contact);
