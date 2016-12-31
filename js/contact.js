@@ -4,6 +4,7 @@ function submit_contact(event)
 	// Don't let page refresh
 	event.preventDefault();
 
+	console.log("Submitting AJAX");
 	$.ajax({
 		url: 'https://formspree.io/mrkevinlee95@gmail.com',
 		method: 'POST',
