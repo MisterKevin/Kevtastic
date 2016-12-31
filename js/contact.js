@@ -20,7 +20,7 @@ function submit_contact(event)
 			dataType: 'json',
 			data: $('#form-kl').serialize(),
 			success: function(data) {
-				contact_result();
+				contact_success();
 			},
 			error: function(error) {
 				formspree_error();
