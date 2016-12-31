@@ -18,7 +18,7 @@ function submit_contact(event)
 	}
 	else
 	{
-		Send the AJAX message
+		// Send the AJAX message
 		$.ajax({
 			url: 'https://formspree.io/mrkevinlee95@gmail.com',
 			method: 'POST',
