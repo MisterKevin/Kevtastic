@@ -172,6 +172,41 @@ a:hover {
 	overflow-x: hidden;	
 }
 
+.bio-wrapper-center-contact-body {
+	background: rgba(30, 30, 30, 0.8);
+	border-radius: 10px;
+
+	padding-top: 1%;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+
+	top: 0;
+	left: 0;
+
+	width: 60%;
+	margin: 0 auto;
+	height: auto;
+	overflow-x: hidden;	
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.bio-wrapper-center-contact-body-inner {
+	padding: 0;
+
+	top: 0;
+	left: 0;
+
+	width: 90%;
+	margin: 0 auto;
+	height: auto;
+	overflow-x: hidden;	
+}
+
 .bio-wrapper-home {
 	width: 100%;
 	overflow-x: hidden;
@@ -603,7 +638,7 @@ a:hover {
 	margin: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 
 	position: relative;
 }
@@ -663,7 +698,7 @@ a:hover {
 
 #q_about_tip_2 {
 	width: 40%;
-	left: 5%;
+	left: 3.95%;
 	top: 42.5%;
 
 	/* Tilting the text */
@@ -715,6 +750,50 @@ a:hover {
 	-ms-transform: rotate(-7deg); /* IE 9 */
     -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
     transform: rotate(-7deg);
+}
+
+#q_contact_tip_1 {
+	width: 28%;
+	left: -4.5%;
+	top: 65.75%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    transform: rotate(-5deg);
+}
+
+#q_contact_tip_2 {
+	width: 28%;
+	left: 9.5%;
+	top: 58%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(-3deg); /* IE 9 */
+    -webkit-transform: rotate(-3deg); /* Chrome, Safari, Opera */
+    transform: rotate(-3deg);
+}
+
+#q_contact_tip_3 {
+	width: 30%;
+	left: 21.5%;
+	top: 65%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(-5deg); /* IE 9 */
+    -webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+    transform: rotate(-5deg);
+}
+
+#q_contact_tip_4 {
+	width: 45%;
+	left: 1.25%;
+	top: 83%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(.5deg); /* IE 9 */
+    -webkit-transform: rotate(.5deg); /* Chrome, Safari, Opera */
+    transform: rotate(.5deg);
 }
 
 #pdf:hover {

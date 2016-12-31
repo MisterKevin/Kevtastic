@@ -47,7 +47,7 @@ function form_error_check()
 		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Please fill in your email.</p>")
 	else if (!/[^@]+@[^@]+\.[^@]+/.test($('#email-id').val()))
 		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Email address must be valid.</p>");
-	if ($('#text-id').val().length  < 10)
+	if ($('#text-id').val().length  < 5)
 		error_container.push("<p class=\"form-error\" style=\"margin-left: 5%\">> Please fill in the body with a <i>bit</i> more words. Tell me about you!</p>")
 	
 	return error_container;
@@ -60,24 +60,24 @@ function contact_success()
 	clearInterval(refreshIntervalID);
 
 	// Lower opacity of text, shrink div, then display success message
-	$('.bio-wrapper-center-about-body-inner').velocity({
+	$('.bio-wrapper-center-contact-body-inner').velocity({
 		opacity: 0
 	}, global_animation_time, global_ease_out, function() {
-		$('.bio-wrapper-center-about-body').velocity({
+		$('.bio-wrapper-center-contact-body').velocity({
 			height: "10%",
 		}, global_animation_time, global_ease_out, function() {
 			// Delete old text
-			$('.bio-wrapper-center-about-body-inner').empty();
+			$('.bio-wrapper-center-contact-body-inner').empty();
 
 			// Append success message
-			$('.bio-wrapper-center-about-body-inner').append("\
+			$('.bio-wrapper-center-contact-body-inner').append("\
 				<p class=\"green-text text-body-fira\" style=\"font-size: 1.1vw\">\
 					Hurrah! You've successfully sent me an e-mail. Thanks!\
 				</p>\
 			");
 
 			// Fade in
-			$('.bio-wrapper-center-about-body-inner').velocity({
+			$('.bio-wrapper-center-contact-body-inner').velocity({
 				opacity: 1
 			}, global_animation_time, global_ease_out);
 		});
@@ -102,6 +102,11 @@ function contact_form_error(error_container)
 // In case of error not in the form, but in formspree
 function formspree_error()
 {
+	clearInterval(refreshIntervalID);
+	
+	// Reset other messages
+	$('.error-container').empty();
+
 	$('.error-container').append("\
 		<p class=\"form-error\">\
 			Hmm, something seems to be going wrong with the e-mail service. My sincerest apologies! Please try sending me an e-mail directly at <span class=\"orange\"><u>mrkevinlee95@gmail.com</u></span>.\
@@ -112,7 +117,8 @@ function formspree_error()
 // Show loading message
 function loading_msg()
 {
-	loading = true;
+	$('.error-container').empty();
+
 	$('.error-container').append("\
 		<p class=\"loading-msg\">\
 			Loading.\

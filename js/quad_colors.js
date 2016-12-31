@@ -6,7 +6,7 @@ var random_colors_tips = []; // Append to this too, for tips
 var perm_colors = [ "#A6E22E", "#66D9EF", "#F92672", "#FD971F" ]; // Hint: [ Green, Cyan, Pink, Orange ]
 var perm_colors_tips = [ "#B3E74B", "#75DCF0", "#FB518F", "#FDA035" ];
 var quad_ids = [ "#q_about", "#q_resume", "#q_contact", "#q_other" ];
-var quad_tip_ids = [ ".tips_about", ".tips_resume" ];
+var quad_tip_ids = [ ".tips_about", ".tips_resume", ".tips_contact" ];
 var arrow_img_colors = [ "images/green_arrow.png", "images/cyan_arrow.png", "images/pink_arrow.png", "images/orange_arrow.png" ];
 var arrow_color_index= 0;
 

@@ -93,8 +93,8 @@ function contact_info()
 			<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
 				<p class=\"code-header white thin-underline-orange center\" id=\"contact-header\"><b>contactMe()</b></p>\
 			</div>\");\
-			<div class=\"bio-wrapper-center-about-body\">\
-				<div class=\"bio-wrapper-center-about-body-inner\">\
+			<div class=\"bio-wrapper-center-contact-body\">\
+				<div class=\"bio-wrapper-center-contact-body-inner\">\
 					<form id=\"form-kl\">\
 						<div class=\"form-group\">\
 							<label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Name <span class=\"pink-text\">*</span></label>\
@@ -102,7 +102,7 @@ function contact_info()
 						</div>\
 						<div class=\"form-group\">\
 							<label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Email Address <span class=\"pink-text\">*</span></label>\
-							<input name=\"email\" id=\"email-id\" type=\"email\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"emailHelp\" placeholder=\"johndoe@email.com\">\
+							<input name=\"email\" id=\"email-id\" type=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"emailHelp\" placeholder=\"johndoe@email.com\">\
 						</div>\
 						<div class=\"form-group\">\
 						  <label class=\"grey-text text-body-fira\" style=\"font-size: 1.1vw\">Telephone</label>\
@@ -163,6 +163,18 @@ function home_info()
 				</div>\
 				<div class=\"quad\" id=\"q_contact\">\
 					<p class=\"white code-quad\">contactMe()</p>\
+				</div>\
+				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_1\">\
+					<p class=\"text-handwriting\" style=\"font-size: 2.1vw;\">Feedback?</p>\
+				</div>\
+				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_2\">\
+					<p class=\"text-handwriting\" style=\"font-size: 2.4vw;\">Opportunities?</p>\
+				</div>\
+				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_3\">\
+					<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">Romantic dinner?</p>\
+				</div>\
+				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_4\">\
+					<p class=\"text-handwriting\" style=\"font-size: 2.38vw;\">Talk to me about it here!</p>\
 				</div>\
 				<div class=\"quad\" id=\"q_other\">\
 					<p class=\"white code-quad\">connect()</p>\
