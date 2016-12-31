@@ -82,6 +82,7 @@ function about_info()
 	");
 }
 
+// action=\"https://formspree.io/mrkevinlee95@gmail.com\" method=\"POST\"
 function contact_info()
 {
 	$('#col-9').append("\
@@ -94,7 +95,7 @@ function contact_info()
 			</div>\");\
 			<div class=\"bio-wrapper-center-about-body\">\
 				<div class=\"bio-wrapper-center-about-body-inner\">\
-					<form>\
+					<form id=\"form-kl\">\
 						<div class=\"form-group\">\
 							<label class=\"grey-text-kl text-body-fira\" style=\"font-size: 1.1vw\">Name <span class=\"pink-text\">*</span></label>\
 							<input name=\"name\" type=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" aria-describedby=\"nameHelp\" placeholder=\"John Doe\">\
@@ -113,7 +114,7 @@ function contact_info()
 					    <textarea name=\"text\" class=\"form-control\" style=\"background-color: #d9d9d9; border: 1px solid #a6a6a6;\" id=\"text-area\" rows=\"8\" placeholder=\"Talk to me here!\"></textarea>\
 					  </div>\
 					  <input type=\"text\" name=\"_gotcha\" style=\"display:none\"/>\
-						<input type=\"submit\" value=\"Send\" id=\"submit-id\" class=\"btn btn-warning text-btn-fira\"></button><br><br>\
+						<input type=\"submit\" value=\"Send\" id=\"submit-id\" class=\"btn btn-warning text-btn-fira submit\"></button><br><br>\
 					</form>\
 				</div>\
 			</div>\
@@ -124,6 +125,8 @@ function contact_info()
 	jQuery(function($){
    $("#tel-input").mask("(999) 999-9999");
 	});
+
+	$('#form-kl').submit(submit_contact);
 }
 
 function home_info()
