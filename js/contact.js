@@ -51,10 +51,10 @@ function contact_success()
 	// Lower opacity of text, shrink div, then display success message
 	$('.bio-wrapper-center-about-body-inner').velocity({
 		opacity: 0
-	}, global_animation_time, function() {
+	}, global_animation_time, global_ease_out, function() {
 		$('.bio-wrapper-center-about-body').velocity({
-			height: new_height,
-		}, global_animation_time, function() {
+			height: "10%",
+		}, global_animation_time, global_ease_out, function() {
 			// Delete old text
 			$('.bio-wrapper-center-about-body-inner').empty();
 
@@ -68,7 +68,7 @@ function contact_success()
 			// Fade in
 			$('.bio-wrapper-center-about-body-inner').velocity({
 				opacity: 1
-			}, global_animation_time);
+			}, global_animation_time, global_ease_out);
 		});
 	});
 }
