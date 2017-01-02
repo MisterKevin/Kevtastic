@@ -666,11 +666,23 @@ a:hover {
 	justify-content: center;
 }
 
-#q_about:hover, #q_resume:hover, #q_contact:hover, #q_other:hover {
+#q_about:hover, #q_resume:hover, #q_contact:hover {
 	cursor: pointer;
 }
 
-#q_about, #q_resume, #q_contact, #q_other {
+.tips_about, .tips_resume, .tips_contact, .tips_connect_text {
+	pointer-events: none;
+}
+
+.tips_connect_icon:hover {
+	cursor: pointer;
+}
+
+#q_connect_text {
+	pointer-events: none;
+}
+
+#q_about, #q_resume, #q_contact, #q_connect {
 	opacity: 1;
 	border: 2px solid black;
 	background: rgba(20, 20, 20, .6);
@@ -679,7 +691,6 @@ a:hover {
 
 .quad_tips {
 	z-index: 20;
-	pointer-events: none;
 	position: absolute;
 	text-align: center;
 	opacity: 0;
@@ -721,7 +732,7 @@ a:hover {
 #q_resume_pdf_tip {
 	width: 16.5%;
 	right: 3%;
-	top: 19%;
+	top: 18%;
 
 	/* Tilting the text */
 	-ms-transform: rotate(7deg); /* IE 9 */
@@ -736,9 +747,9 @@ a:hover {
 	top: 20%;
 
 	/* Tilting the text */
-	-ms-transform: rotate(10deg); /* IE 9 */
-    -webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
-    transform: rotate(10deg);
+	-ms-transform: rotate(5deg); /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Chrome, Safari, Opera */
+    transform: rotate(5deg);
 }
 
 #q_resume_info_tip {
@@ -750,6 +761,11 @@ a:hover {
 	-ms-transform: rotate(-7deg); /* IE 9 */
     -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
     transform: rotate(-7deg);
+}
+
+#pdf:hover {
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 #q_contact_tip_1 {
@@ -796,10 +812,75 @@ a:hover {
     transform: rotate(0deg);
 }
 
-#pdf:hover {
-	cursor: pointer;
-	text-decoration: underline;
+#q_resume_info_tip {
+	width: 28%;
+	right: 22%;
+	top: 40%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
 }
+
+#q_connect_icon_1:hover, #q_connect_icon_2:hover {
+	cursor: pointer;
+}
+
+#q_connect_icon_1 {
+	width: 8.5%;
+	height: 10.5%;
+	right: 5%;
+	top: 57.4%;
+	opacity: 0;
+}
+
+#q_connect_icon_2 {
+	width: 9.5%;
+	height: 8%;
+	right: 37%;
+	top: 59.5%;
+	opacity: 0;
+}
+
+#q_connect_icon_3 {
+	width: 8.7%;
+	height: 10%;
+	right: 37.5%;
+	top: 79%;
+	opacity: 0;
+}
+
+#q_connect_icon_4 {
+	width: 8.7%;
+	height: 10%;
+	right: 5%;
+	top: 79%;
+	opacity: 0;
+}
+
+#q_connect_tip_1 {
+	width: 18%;
+	right: 16.5%;
+	top: 60%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(3deg); /* IE 9 */
+    -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+    transform: rotate(3deg);
+}
+
+#q_connect_tip_2 {
+	width: 30%;
+	right: 10.5%;
+	top: 83%;
+
+	/* Tilting the text */
+	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+
 
 /*/////////////////*/
 /* CONTACT SECTION */

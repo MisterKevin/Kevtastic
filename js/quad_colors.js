@@ -5,10 +5,11 @@ var random_colors = []; // Append to this
 var random_colors_tips = []; // Append to this too, for tips
 var perm_colors = [ "#A6E22E", "#66D9EF", "#F92672", "#FD971F" ]; // Hint: [ Green, Cyan, Pink, Orange ]
 var perm_colors_tips = [ "#B3E74B", "#75DCF0", "#FB518F", "#FDA035" ];
-var quad_ids = [ "#q_about", "#q_resume", "#q_contact", "#q_other" ];
-var quad_tip_ids = [ ".tips_about", ".tips_resume", ".tips_contact" ];
+var quad_ids = [ "#q_about", "#q_resume", "#q_contact", "#q_connect" ];
+var quad_tip_ids = [ ".tips_about", ".tips_resume", ".tips_contact", ".tips_connect_text" ];
 var arrow_img_colors = [ "images/green_arrow.png", "images/cyan_arrow.png", "images/pink_arrow.png", "images/orange_arrow.png" ];
-var arrow_color_index= 0;
+var arrow_color_index = 0;
+var connect_index = 0;
 
 /* Hover */
 $(document).delegate("#pdf", 'mouseenter mouseleave', function(event) 
@@ -34,6 +35,10 @@ $(document).delegate('.quad', 'mouseenter', function(event)
 			$(quad_tip_ids[index]).velocity("stop", true).velocity({
 				opacity: 1
 			}, color_animation_time);
+
+			// If q_connect div, then also show icons
+			if (value == "#q_connect")
+				show_connect();
 		}
 	});
 	
@@ -58,7 +63,9 @@ $(document).delegate('.quad', 'mouseenter', function(event)
 });
 
 /* Hover */
-$(document).delegate('.quad', 'mouseleave', function(event)
+$(document).delegate('.quad', 'mouseleave', mouse_leave_div);
+
+function mouse_leave_div(event)
 {
 	var this_div = "#" + this.id;
 
@@ -79,7 +86,10 @@ $(document).delegate('.quad', 'mouseleave', function(event)
 			}, color_animation_time);
 		}
 	});
-});
+
+	// Also hide #connect
+	hide_connect();
+}
 
 function quad_color_start()
 {
@@ -123,6 +133,8 @@ function generate_random_colors()
 
 		if (counter == 1) // Second div, update arrow color with index
 			arrow_color_index = num;
+		if (counter == 3) // Fourth div 
+			connect_index = num;
 
 		counter += 1;
 	}

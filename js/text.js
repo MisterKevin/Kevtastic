@@ -91,7 +91,7 @@ function contact_info()
 				<p class=\"code-header grey clickable\" id=\"back-arrow-id\"><<<</p>\
 			</div>\
 			<div class=\"bio-wrapper-center-about-header\" id=\"info\">\
-				<p class=\"code-header white thin-underline-orange center\" id=\"contact-header\"><b>contactMe()</b></p>\
+				<p class=\"code-header white thin-underline-orange center\" id=\"contact-header\"><b>contact()</b></p>\
 			</div>\");\
 			<div class=\"bio-wrapper-center-contact-body\">\
 				<div class=\"bio-wrapper-center-contact-body-inner\">\
@@ -165,7 +165,7 @@ function home_info()
 					<p class=\"text-handwriting\" style=\"font-size: 2.0vw;\">view my professional life here</p>\
 				</div>\
 				<div class=\"quad\" id=\"q_contact\">\
-					<p class=\"white code-quad\">contactMe()</p>\
+					<p class=\"white code-quad\">contact()</p>\
 				</div>\
 				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_1\">\
 					<p class=\"text-handwriting\" style=\"font-size: 2.1vw;\">Feedback?</p>\
@@ -179,8 +179,30 @@ function home_info()
 				<div class=\"quad_tips tips_contact\" id=\"q_contact_tip_4\">\
 					<p class=\"text-handwriting\" style=\"font-size: 2.38vw;\">Talk to me about it here!</p>\
 				</div>\
-				<div class=\"quad\" id=\"q_other\">\
-					<p class=\"white code-quad\">connect()</p>\
+				<div class=\"quad\" id=\"q_connect\">\
+					<p class=\"white code-quad\" id=\"q_connect_text\">connect()</p>\
+				</div>\
+				<figure class=\"quad_tips tips_connect_icon\" id=\"q_connect_icon_1\" name=\"linkedin\">\
+					<img src=\"images/linkedin_icon.png\" id=\"q_connect_icon_1_img\" width=\"100%\" height=\"100%\">\
+					<figcaption class=\"text-handwriting\" id=\"q_connect_icon_1_caption\" style=\"font-size: 1.7vw\">LinkedIn</figcaption>\
+				</figure>\
+				<figure class=\"quad_tips tips_connect_icon\" id=\"q_connect_icon_2\" name=\"mail\">\
+					<img src=\"images/mail_icon.png\" id=\"q_connect_icon_2_img\" width=\"100%\" height=\"100%\">\
+					<figcaption class=\"text-handwriting\" id=\"q_connect_icon_2_caption\" style=\"font-size: 1.7vw\">E-mail</figcaption>\
+				</figure>\
+				<figure class=\"quad_tips tips_connect_icon\" id=\"q_connect_icon_3\" name=\"facebook\">\
+					<img src=\"images/facebook_icon.png\" id=\"q_connect_icon_3_img\" width=\"100%\" height=\"100%\" style=\"border-radius: 50%\">\
+					<figcaption class=\"text-handwriting\" id=\"q_connect_icon_3_caption\" style=\"font-size: 1.7vw\">Facebook</figcaption>\
+				</figure>\
+				<figure class=\"quad_tips tips_connect_icon\" id=\"q_connect_icon_4\" name=\"github\">\
+					<img src=\"images/github_icon.png\" id=\"q_connect_icon_4_img\" width=\"100%\" height=\"100%\">\
+					<figcaption class=\"text-handwriting\" id=\"q_connect_icon_4_caption\" style=\"font-size: 1.7vw\">Github</figcaption>\
+				</figure>\
+				<div class=\"quad_tips tips_connect_text\" id=\"q_connect_tip_1\">\
+					<p class=\"text-handwriting\" style=\"font-size: 1.85vw;\">Find me elsewhere, too!</p>\
+				</div>\
+				<div class=\"quad_tips tips_connect_text\" id=\"q_connect_tip_2\">\
+					<p class=\"text-handwriting\" style=\"font-size: 1.85vw;\">Click the icons!</p>\
 				</div>\
 			</div>\
 		</div>\
