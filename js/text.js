@@ -15,7 +15,7 @@ function resume_info()
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Education</span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> University of Michigan - Bachelor's of Science</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Ann Arbor, MI | Fall '13 - May '17</span></span></p>\
-				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Major: Computer Science | Minor: Music | GPA: 3.3 / 4.0</span></span></p>\
+				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Major: Computer Science | Minor: Music | GPA: 3.4 / 4.0</span></span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> International Academy - International Baccalaureate Diploma</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Bloomfield Hills, MI | Fall '09 - Winter '13</span></span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Extracurriculars</span></p>\
@@ -28,13 +28,14 @@ function resume_info()
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Philip Hayden Foundation Volunteer</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Winter '13</span></span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Courses Taken</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 482: Operating Systems</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 388: Computer Security</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 485: Web Database and Information Systems</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 381:</b> Object Oriented and Advanced Programming</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 388:</b> Introduction to Computer Security</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 482:</b> Operating Systems and Multi-Threading</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 485:</b> Web Database and Information Systems</span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Skills</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Primary: C++11, Python, C, OpenGL</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Secondary: Multithreading, C++14, Boost.Asio, R</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Tertiary: HTML/CSS, Javascript, SQL, Java, OpenCV</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Primary:</b> C++11, C++14, Python, C, OpenGL</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Secondary:</b> Multithreading, Boost.Asio, R, Javascript</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Tertiary:</b> HTML/CSS, SQL, Java, OpenCV</span></p>\
 			</div>\
 			<div class=\"col-md-6\" id=\"experience-wrapper\">\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Experience</span></p>\
