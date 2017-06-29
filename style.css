@@ -70,6 +70,11 @@ a:hover {
 	padding-right: 0px;
 }
 
+#container-row-override {
+	/*Will be set to 1 after website loads*/
+	opacity: 0;
+}
+
 .row-fluid {
 	height: 100%;
 	z-index: -1;

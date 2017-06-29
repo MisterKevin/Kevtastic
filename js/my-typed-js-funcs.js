@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function()
 	// This stops screen showing improperly formatted text/CSS 
 	// because the CSS / Javascript formatting is still loading, but
 	// text already loaded.
+	$("#container-row-override").css("opacity", 1);
 	$(".bio-wrapper-3").css("opacity", 1);
 	$(".code-front-door").css("opacity", 1);
 	$("#portrait-col").css("border-right", "2px solid #75715E");
