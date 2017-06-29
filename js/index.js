@@ -12,21 +12,21 @@ $(document).ready(function() {
 	history.replaceState({ url: "home" }, "", "");
 });
 
-$(document).delegate('.front_door_image', 'click touchstart', function(event)
+$(document).delegate('.front-door', 'click touchstart', function(event)
 {
 	// Prevent multiple clicks on front door image
 	if (!animation_running)
 	{
 		animation_running = true;
 		state = "home";
-		$(".front_door_image").fadeOut(function() {
+		$(".front-door").fadeOut(function() {
 			// Begin displaying gradient
 			// update_gradient();
 			// gradient_update_interval_ID = setInterval(update_gradient, 500);
 			// initialize_gradient();
 
 			// Write home-info
-			home_info();
+			home_info(); // in text.js
 
 			// Generate home's quad colors
 			quad_color_start();
