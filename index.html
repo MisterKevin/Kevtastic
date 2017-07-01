@@ -59,6 +59,14 @@
 
 		<!-- Beautiful logo by Jenna Jin :) -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+		<!-- Script to detect mobile devices, redirect to mobile site -->
+		<script type="text/javascript">
+			var isMobile = false;
+			if (screen.width <= 800) {
+				isMobile = true; // Used in index.js to block users out.
+			}
+		</script>
 	</head>
 	
 	<body id="body-wrapper">
@@ -96,7 +104,7 @@
 		</div>
 
 		<div class="container-fluid" id="container-override">
-			<div class="row-fluid">
+			<div class="row-fluid" id="container-row-override">
 				<div class="col-md-3" id="portrait-col">
 					<div class="bio-wrapper-3"> 
 						<img src="images/its_me_optimized.jpg" class="portrait">

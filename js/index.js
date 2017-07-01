@@ -14,6 +14,9 @@ $(document).ready(function() {
 
 $(document).delegate('.front-door', 'click touchstart', function(event)
 {
+	// Lock front door out.
+	if (isMobile) return;
+
 	// Prevent multiple clicks on front door image
 	if (!animation_running)
 	{
