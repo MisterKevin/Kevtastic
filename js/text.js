@@ -34,7 +34,7 @@ function resume_info()
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 485:</b> Web Database and Information Systems</span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Skills</span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Primary:</b> C++11, C++14, Python, C, OpenGL</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Secondary:</b> Multithreading, Boost.Asio, R, Javascript</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Secondary:</b> Multithreading, Windows Programming, Javascript</span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Tertiary:</b> HTML/CSS, SQL, Java, OpenCV</span></p>\
 			</div>\
 			<div class=\"col-md-6\" id=\"experience-wrapper\">\
