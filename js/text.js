@@ -15,7 +15,7 @@ function resume_info()
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Education</span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> University of Michigan - Bachelor's of Science</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Ann Arbor, MI | Fall '13 - May '17</span></span></p>\
-				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Major: Computer Science | Minor: Music | GPA: 3.3 / 4.0</span></span></p>\
+				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Major: Computer Science | Minor: Music | GPA: 3.4 / 4.0</span></span></p>\
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> International Academy - International Baccalaureate Diploma</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Bloomfield Hills, MI | Fall '09 - Winter '13</span></span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Extracurriculars</span></p>\
@@ -28,13 +28,14 @@ function resume_info()
 				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Philip Hayden Foundation Volunteer</span></p>\
 				<p class=\"grey-text text-body-raleway-subtext margin-top-left-small\"><span class=\"tab\"><span class=\"tab\">Winter '13</span></span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Courses Taken</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 482: Operating Systems</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 388: Computer Security</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> EECS 485: Web Database and Information Systems</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 381:</b> Object Oriented and Advanced Programming</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 388:</b> Introduction to Computer Security</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 482:</b> Operating Systems and Multi-Threading</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>EECS 485:</b> Web Database and Information Systems</span></p>\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Key Skills</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Primary: C++11, Python, C, OpenGL</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Secondary: Multithreading, C++14, Boost.Asio, R</span></p>\
-				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> Tertiary: HTML/CSS, Javascript, SQL, Java, OpenCV</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Primary:</b> C++11, C++14, Python, C, OpenGL</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Secondary:</b> Multithreading, Boost.Asio, R, Javascript</span></p>\
+				<p class=\"white text-body-raleway\"><span class=\"tab\"><span class=\"orange\"><b>></b></span> <b>Tertiary:</b> HTML/CSS, SQL, Java, OpenCV</span></p>\
 			</div>\
 			<div class=\"col-md-6\" id=\"experience-wrapper\">\
 				<p class=\"text-header-raleway-2 white left cyan\"><span class=\"border-bottom-cyan\">Experience</span></p>\
@@ -73,7 +74,7 @@ function about_info()
 					<p class=\"text-body-fira white word-wrap justified\">I'm a current <span class=\"pink\">Software Engineer at Microsoft</span>, and a recent graduate from the University of Michigan. I studied <span class=\"pink\">Computer Science with a minor in Music</span>, and these accurately reflect my interests; I am a creative and analytical student who is passionate about <span class=\"pink\">Software Engineering and the Creative Arts</span>.</p><br>\
 					<p class=\"text-body-fira white word-wrap justified\"><span class=\"orange\"><b>> </b>Software Engineering:</span> I had my first \"Hello World\" experience just three years ago, and that has changed my life. I adore the problem-solving and puzzle-cracking aspect of software engineering and have had two software engineering internships ever since. Currently, my home for learning and practicing software engineering is with <span class=\"green\">Microsoft</span>, specifically working in <span class=\"green\">Outlook Desktop</span>.</p><br>\
 					<p class=\"text-body-fira white word-wrap justified\"><span class=\"orange\"><b>> </b>Creative Arts:</span> Music keeps me sane. Since joining Seattle, I've joined the <span class=\"green\">Seattle SeaChordsmen</span>, which is a barbershop chorus! I've absolutely fallen in love with that style of vocal singing. Outside of barbershop, my primary instrument is the <span class=\"green\">Erhu, a two-stringed Chinese fiddle</span>, and secondaries would be the piano and violin. In addition to performing, I adore <span class=\"green\">Music Theory & Composition</span>. It's a wonderful subject, infinitely complex, and has intrigued me ever since I first learned what chords are.</p><br>\
-					<p class=\"text-body-fira white word-wrap justified\">Outside of work, I have to admit that video games are pretty neat! I'm an avid <span class=\"pink\">gamer</span> in my free time and am a participant in <span class=\"pink\">After Hours Gaming League</span>, which is a tournament for charity! The main game I'm playing today is League of Legends. Other things I enjoy doing include <span class=\"pink\">beatboxing</span>, <span class=\"pink\">bartending</span>, and shopping for <span class=\"pink\">floral shirts</span> (they're fantastic).</p><br>\
+					<p class=\"text-body-fira white word-wrap justified\"><span class=\"orange\">Extracurriculars</span>: Outside of work, I have to admit that video games are pretty neat! I'm an avid <span class=\"pink\">gamer</span> in my free time and am a participant in <span class=\"pink\">After Hours Gaming League</span>, which is a tournament for charity! The main game I'm playing today is League of Legends. Other things I enjoy doing include <span class=\"pink\">beatboxing</span>, <span class=\"pink\">bartending</span>, and shopping for <span class=\"pink\">floral shirts</span> (they're fantastic).</p><br>\
 					<p class=\"text-body-fira white word-wrap justified\">Thank you for visiting my website, and I hope you have a wonderful time exploring here. :)</p><br>\
 					<p class=\"text-body-fira white word-wrap right\">Best,<br><span class=\"cyan\">Kevin Lee</span></p>\
 				</div>\

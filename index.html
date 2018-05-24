@@ -24,6 +24,7 @@
 		<script src="js/resume.js"></script>
 		<script src="js/contact.js"></script>
 		<script src="js/connect.js"></script>
+		<script src="js/my-typed-js-funcs.js"></script>
 		
 		<!-- Fonts -->
 		<!-- font-family: 'Raleway', sans-serif; -->
@@ -53,15 +54,57 @@
 		<!-- Velocity -->
 		<script src="velocity-master/velocity.js"></script>
 
+		<!-- Typed.js -->
+		<script src="typed-js/js/typed.js"></script>
+
 		<!-- Beautiful logo by Jenna Jin :) -->
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-	</head>
 
+		<!-- Script to detect mobile devices, redirect to mobile site -->
+		<script type="text/javascript">
+			var isMobile = false;
+			if (screen.width <= 800) {
+				isMobile = true; // Used in index.js to block users out.
+			}
+		</script>
+	</head>
+	
 	<body id="body-wrapper">
-		<div class="front_door_image"></div>
- 
+		<!-- Typed.js Introduction... It's ugly I'm sorry. -->
+		<div class="front-door">
+			<div id="door-text">
+			<!-- Text 1 -->
+				<p><span class="code-front-door"><span class="pink">#include</span> <span class="yellow">&lt;iostream&gt;^100</span>
+
+<span class="cyan">int</span> <span class="green">main</span><span class="white" style="font-size: 1.3vw;">()</span>
+<span class="white">{</span>
+    <span class="white">std::cout</span> <span class="pink">&lt;&lt;</span> <span class="yellow">"^220.^220.^200is this working?^300.^300.^150."</span><span class="white">;</span></span></p>
+
+    		<!-- Text 2 -->
+    			<p><span class="code-front-door"><span class="pink">#include</span> <span class="yellow">&lt;iostream&gt;</span>
+
+<span class="cyan">int</span> <span class="green">main</span><span class="white" style="font-size: 1.3vw;">()</span>
+<span class="white">{</span>
+    <span class="white">std::cout</span> <span class="pink">&lt;&lt;</span> <span class="yellow">"oh sweet!"</span><span class="white">;</span></span></p>
+
+    		<!-- Text 3 -->
+    			<p><span class="code-front-door"><span class="pink">#include</span> <span class="yellow">&lt;iostream&gt;</span>
+
+<span class="cyan">int</span> <span class="green">main</span><span class="white" style="font-size: 1.3vw;">()</span>
+<span class="white">{</span>
+    <span class="white">std::cout</span> <span class="pink">&lt;&lt;</span> <span class="yellow">"Hey! I'm Kevin."</span><span class="white">;</span>
+
+    <span class="white">std::cout</span> <span class="pink">&lt;&lt;</span> <span class="yellow">"Click to continue."</span><span class="white">;</span>
+
+    <span class="pink">return</span> ^150<span class="purple">0</span><span class="white">^150;^150</span>
+<span class="white">}</span></span>
+</p>
+			</div>
+			<span id="typed" style="white-space:pre;"></span>
+		</div>
+
 		<div class="container-fluid" id="container-override">
-			<div class="row-fluid">
+			<div class="row-fluid" id="container-row-override">
 				<div class="col-md-3" id="portrait-col">
 					<div class="bio-wrapper-3"> 
 						<img src="images/its_me_optimized.jpg" class="portrait">

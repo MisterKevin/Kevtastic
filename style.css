@@ -70,6 +70,11 @@ a:hover {
 	padding-right: 0px;
 }
 
+#container-row-override {
+	/*Will be set to 1 after website loads*/
+	opacity: 0;
+}
+
 .row-fluid {
 	height: 100%;
 	z-index: -1;
@@ -86,11 +91,11 @@ a:hover {
 	justify-content: center;
 	overflow: hidden;
 
-	border-right: 2px solid #75715E;
+	/*border-right: 2px solid #75715E;
 
 	/*FOR SHADING:*/
-	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
-	box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	/*-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 100px rgba(0,0,0,.3);*/
 }
 
 #col-9 {
@@ -212,6 +217,11 @@ a:hover {
 	overflow-x: hidden;
 }
 
+.bio-wrapper-3 {
+	/* Will get set to 1 upon front-door click */
+	opacity: 0;
+}
+
 .back-arrow {
 	z-index: 20;
 	padding: 0;
@@ -229,8 +239,8 @@ a:hover {
 /*//////////////////////////*/
 /*PICTURES PICTURES PICTURES*/
 /*//////////////////////////*/
-.front_door_image {
-	background: url(images/im_kevin.png) no-repeat center fixed;
+.front-door {
+	background: url(images/im_grey.png) no-repeat center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -242,6 +252,17 @@ a:hover {
 	height:100%;
 	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,1);
 	box-shadow: inset 0 0 100px rgba(0,0,0,1);
+
+	/* Text aligning */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#door_text {
+	font-family: 'Fira Mono', monospace;
+	font-size: 3vw;
+	color: white;
 }
 
 .portrait {
@@ -350,6 +371,14 @@ a:hover {
 	font-size: 3vw;
 }
 
+.code-front-door {
+	font-family: 'Fira Mono', monospace;
+	font-size: 1.6vw;
+
+	/*Will get set to 1 upon startup*/
+	opacity: 0; 
+}
+
 .text-body-fira {
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 1.2vw;
@@ -442,6 +471,14 @@ a:hover {
 
 .grey-text {
 	color: #bfbfbf;
+}
+
+.yellow {
+	color: #e7db7e;
+}
+
+.purple {
+	color: #b78cf2;
 }
 
 /*////////////////////*/
@@ -900,4 +937,41 @@ a:hover {
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 1.1vw;
 	color: #FDA035;
+}
+
+/* Cursor CSS for Typed.js */
+.typed-cursor{
+    opacity: 1;
+    color: white;
+    font-weight: 100;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    -ms-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-ms-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-o-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
