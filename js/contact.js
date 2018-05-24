@@ -4,7 +4,7 @@ var refreshIntervalID = 0;
 function submit_contact(event)
 {
 	// Don't let page refresh
-	event.preventDefault();
+	event.preventDefault(;)
 
 	// Check for errors
 	var error_container = form_error_check();
